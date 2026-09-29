@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Pulse Test and Tag Perth — instant test and tag quotes for electrical safety services." />
+  <title>Pulse Test and Tag Perth | Instant Quote</title>
+  <link rel="icon" href="assets/pulse-logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="Pulse Test and Tag Perth home">
+        <span class="brand-mark">⌁</span>
+        <span class="brand-word"><strong>PULSE</strong><small>TEST AND TAG</small></span>
+        <span class="brand-perth">PERTH</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#quote">Instant Quote</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="header-call" href="tel:0448917087">0448 917 087</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="quote-hero" id="quote">
+      <div class="quote-shell">
+        <div class="quote-intro">
+          <div class="mini-brand">
+            <img src="assets/pulse-logo.png" alt="Pulse Test and Tag Perth" />
+          </div>
+          <div class="title-line">
+            <span class="sliders">☷</span>
+            <div>
+              <h1>Select Quantities</h1>
+              <p>Build your estimate in seconds. Your quote is sent straight to you and copied to Mak.</p>
+            </div>
+          </div>
+          <div class="rule"></div>
+
+          <form id="quoteForm" action="https://formsubmit.co/mak.p@pulsetestandtag.com.au" method="POST">
+            <input type="hidden" name="_subject" value="New Pulse Test & Tag Quote Request">
+            <input type="hidden" name="_cc" value="mak.p@pulsetestandtag.com.au">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" id="autoResponse" value="Thank you for your quote request. Mak from Pulse Test and Tag Perth will be in touch shortly.">
+            <input type="hidden" name="_next" id="nextUrl" value="">
+            <input type="hidden" name="quote_summary" id="quoteSummary" value="">
+            <input type="hidden" name="estimated_total_ex_gst" id="quoteTotal" value="">
+            <input type="hidden" name="estimated_gst" id="quoteGst" value="">
+            <input type="hidden" name="estimated_total_inc_gst" id="quoteTotalInc" value="">
+            <div class="quantity-list">
+              <label class="quantity-field">
+                <span class="field-title">Single Phase Test &amp; Tag</span>
+                <span class="field-help">First 10 tags $100, then $4.95 each</span>
+                <input type="number" min="0" step="1" value="0" name="singlePhase" inputmode="numeric" />
+              </label>
+              <label class="quantity-field">
+                <span class="field-title">3 Phase Test &amp; Tag <em>($15.95 each)</em></span>
+                <input type="number" min="0" step="1" value="0" name="threePhase" inputmode="numeric" />
+              </label>
+              <label class="quantity-field">
+                <span class="field-title">Microwave Radiation Test <em>($18.95 each)</em></span>
+                <input type="number" min="0" step="1" value="0" name="microwave" inputmode="numeric" />
+              </label>
+              <label class="quantity-field">
+                <span class="field-title">Fire Extinguisher Test <em>($18.95 each)</em></span>
+                <input type="number" min="0" step="1" value="0" name="fire" inputmode="numeric" />
+              </label>
+            </div>
+
+            <div class="client-box">
+              <div class="client-heading"><span>CLIENT DETAILS</span><small>Needed to send your quote</small></div>
+              <div class="client-grid">
+                <label>Your name<input required name="name" placeholder="Full name" /></label>
+                <label>Email<input required type="email" name="email" placeholder="you@company.com.au" /></label>
+                <label>Phone<input name="phone" placeholder="04xx xxx xxx" /></label>
+                <label>Company<input name="company" placeholder="Company name" /></label>
+                <label class="full">Site address<input name="address" placeholder="Workplace / site address" /></label>
+                <label class="full">Notes<textarea name="notes" rows="3" placeholder="Anything Mak should know?"></textarea></label>
+              </div>
+            </div>
+
+            <button class="send-btn" type="submit"><span>✉</span> Send my quote</button>
+            <p class="privacy-note">No payment is taken online. Prices shown are estimates and exclude GST.</p>
+          </form>
+        </div>
+
+        <aside class="estimate-card" aria-live="polite">
+          <div class="estimate-header">
+            <div class="estimate-title"><span class="receipt-icon">▤</span><h2>Price Estimate</h2></div>
+            <span class="live-dot">LIVE</span>
+          </div>
+          <div class="estimate-rule"></div>
+          <div class="estimate-total">
+            <span>Estimated Total <small>(Excl. GST)</small></span>
+            <strong id="total">$0.00</strong>
+          </div>
+          <div class="estimate-items" id="estimateList">
+            <div class="empty-state"><span class="check-circle">✓</span><p>Select quantities to see your estimate.</p></div>
+          </div>
+          <div class="request-state" id="requestState">
+            <div class="success-check">✓</div>
+            <h3>Request received!</h3>
+            <p>Your quote will be sent to your email and copied to Mak at Pulse Test and Tag.</p>
+            <a href="tel:0448917087">Need it sooner? Call <strong>0448 917 087</strong>.</a>
+          </div>
+          <div class="estimate-foot">Your request goes straight to Mak at Pulse Test and Tag. Estimates exclude GST.</div>
+          <div id="status" class="status" role="status"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="service-band" id="services">
+      <div class="services-shell">
+        <div class="services-heading">
+          <span>OUR SERVICES</span>
+          <h2>Electrical safety services</h2>
+          <p>Professional, compliant and on-time service across Perth.</p>
+        </div>
+        <div class="service-grid">
+          <article><div class="service-icon">🏷</div><div><h3>Test and Tag</h3><p>AS/NZS 3760:2022</p></div><b>✓</b></article>
+          <article><div class="service-icon">▣</div><div><h3>RCD Testing</h3><p>AS/NZS 3760:2022</p></div><b>✓</b></article>
+          <article><div class="service-icon">♧</div><div><h3>Fire Extinguisher</h3><p>AS 1851:2012</p></div><b>✓</b></article>
+          <article><div class="service-icon">◉</div><div><h3>Microwave Radiation</h3><p>AS/NZS 60335.2.25:2012</p></div><b>✓</b></article>
+          <article><div class="service-icon">⚒</div><div><h3>Appliance Repairs</h3><p>Safe &amp; reliable</p></div><b>✓</b></article>
+          <article><div class="service-icon">⚡</div><div><h3>3 Phase Testing</h3><p>Testing, repairs &amp; maintenance</p></div><b>✓</b></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-shell">
+        <div>
+          <span class="eyebrow">PULSE TEST AND TAG PERTH</span>
+          <h2>Safe. Compliant. Professional. On Time.</h2>
+          <p>Electrical Safety &amp; Appliance Services for Perth workplaces. Get an estimate online, then Mak will contact you to confirm the appointment and scope.</p>
+          <div class="trust-pills"><span>✓ AU/NZ Standards</span><span>✓ Local Perth Service</span><span>✓ Fast Response</span></div>
+        </div>
+        <div class="contact-panel" id="contact">
+          <img src="assets/pulse-logo.png" alt="Pulse Test and Tag Perth logo" />
+          <h3>Mak (Maulik) Patel</h3><span>OWNER</span>
+          <a href="tel:0448917087">0448 917 087</a>
+          <a href="mailto:mak.p@pulsetestandtag.com.au">mak.p@pulsetestandtag.com.au</a>
+          <a href="https://www.pulsetestandtag.com.au" target="_blank" rel="noopener">www.pulsetestandtag.com.au</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div>© <span id="year"></span> Pulse Test and Tag Perth</div><div>Electrical Safety &amp; Appliance Services</div></footer>
+  <script src="app.js"></script>
+</body>
+</html>

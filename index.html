@@ -42,49 +42,50 @@
           </div>
           <div class="rule"></div>
 
-          <form id="quoteForm" action="https://formsubmit.co/mak.p@pulsetestandtag.com.au" method="POST">
-            <input type="hidden" name="_subject" value="New Pulse Test & Tag Quote Request">
-            <input type="hidden" name="_cc" value="mak.p@pulsetestandtag.com.au">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_autoresponse" id="autoResponse" value="Thank you for your quote request. Mak from Pulse Test and Tag Perth will be in touch shortly.">
-            <input type="hidden" name="_next" id="nextUrl" value="">
+          <form id="quoteForm" onsubmit="handleWeb3Submit(event)">
+            <input type="hidden" name="access_key" value="3c3e8061-0a6d-4ee8-9f1e-f3a3d2482fa8">
+            <input type="hidden" name="subject" value="New Pulse Test & Tag Quote Request">
+            <input type="hidden" name="from_name" value="Pulse Test & Tag Perth Website">
+            <input type="hidden" name="to_email" value="mak.p@pulsetestandtag.com.au">
+            
             <input type="hidden" name="quote_summary" id="quoteSummary" value="">
             <input type="hidden" name="estimated_total_ex_gst" id="quoteTotal" value="">
             <input type="hidden" name="estimated_gst" id="quoteGst" value="">
             <input type="hidden" name="estimated_total_inc_gst" id="quoteTotalInc" value="">
+
             <div class="quantity-list">
               <label class="quantity-field">
                 <span class="field-title">Single Phase Test &amp; Tag</span>
                 <span class="field-help">First 10 tags $100, then $4.95 each</span>
-                <input type="number" min="0" step="1" value="0" name="singlePhase" inputmode="numeric" />
+                <input type="number" min="0" step="1" value="0" name="singlePhase" id="singlePhase" inputmode="numeric" oninput="updateCalculations()" />
               </label>
               <label class="quantity-field">
                 <span class="field-title">3 Phase Test &amp; Tag <em>($15.95 each)</em></span>
-                <input type="number" min="0" step="1" value="0" name="threePhase" inputmode="numeric" />
+                <input type="number" min="0" step="1" value="0" name="threePhase" id="threePhase" inputmode="numeric" oninput="updateCalculations()" />
               </label>
               <label class="quantity-field">
                 <span class="field-title">Microwave Radiation Test <em>($18.95 each)</em></span>
-                <input type="number" min="0" step="1" value="0" name="microwave" inputmode="numeric" />
+                <input type="number" min="0" step="1" value="0" name="microwave" id="microwave" inputmode="numeric" oninput="updateCalculations()" />
               </label>
               <label class="quantity-field">
                 <span class="field-title">Fire Extinguisher Test <em>($18.95 each)</em></span>
-                <input type="number" min="0" step="1" value="0" name="fire" inputmode="numeric" />
+                <input type="number" min="0" step="1" value="0" name="fire" id="fire" inputmode="numeric" oninput="updateCalculations()" />
               </label>
             </div>
 
             <div class="client-box">
               <div class="client-heading"><span>CLIENT DETAILS</span><small>Needed to send your quote</small></div>
               <div class="client-grid">
-                <label>Your name<input required name="name" placeholder="Full name" /></label>
-                <label>Email<input required type="email" name="email" placeholder="you@company.com.au" /></label>
-                <label>Phone<input name="phone" placeholder="04xx xxx xxx" /></label>
-                <label>Company<input name="company" placeholder="Company name" /></label>
-                <label class="full">Site address<input name="address" placeholder="Workplace / site address" /></label>
-                <label class="full">Notes<textarea name="notes" rows="3" placeholder="Anything Mak should know?"></textarea></label>
+                <label>Your name<input required name="name" id="clientName" placeholder="Full name" /></label>
+                <label>Email<input required type="email" name="email" id="clientEmail" placeholder="you@company.com.au" /></label>
+                <label>Phone<input name="phone" id="clientPhone" placeholder="04xx xxx xxx" /></label>
+                <label>Company<input name="company" id="clientCompany" placeholder="Company name" /></label>
+                <label class="full">Site address<input name="address" id="clientAddress" placeholder="Workplace / site address" /></label>
+                <label class="full">Notes<textarea name="notes" id="clientNotes" rows="3" placeholder="Anything Mak should know?"></textarea></label>
               </div>
             </div>
 
-            <button class="send-btn" type="submit"><span>✉</span> Send my quote</button>
+            <button class="send-btn" id="sendBtn" type="submit"><span>✉</span> Send my quote</button>
             <p class="privacy-note">No payment is taken online. Prices shown are estimates and exclude GST.</p>
           </form>
         </div>
@@ -102,10 +103,10 @@
           <div class="estimate-items" id="estimateList">
             <div class="empty-state"><span class="check-circle">✓</span><p>Select quantities to see your estimate.</p></div>
           </div>
-          <div class="request-state" id="requestState">
+          <div class="request-state" id="requestState" style="display: none;">
             <div class="success-check">✓</div>
             <h3>Request received!</h3>
-            <p>Your quote will be sent to your email and copied to Mak at Pulse Test and Tag.</p>
+            <p>Your quote has been sent to Mak at Pulse Test and Tag Perth.</p>
             <a href="tel:0448917087">Need it sooner? Call <strong>0448 917 087</strong>.</a>
           </div>
           <div class="estimate-foot">Your request goes straight to Mak at Pulse Test and Tag. Estimates exclude GST.</div>
@@ -152,6 +153,62 @@
   </main>
 
   <footer><div>© <span id="year"></span> Pulse Test and Tag Perth</div><div>Electrical Safety &amp; Appliance Services</div></footer>
+
   <script src="app.js"></script>
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    function updateCalculations() {
+      const sp = parseInt(document.getElementById('singlePhase').value) || 0;
+      const tp = parseInt(document.getElementById('threePhase').value) || 0;
+      const mw = parseInt(document.getElementById('microwave').value) || 0;
+      const fe = parseInt(document.getElementById('fire').value) || 0;
+
+      let subtotal = 0;
+      if (sp > 0) {
+        subtotal += (sp <= 10) ? 100 : 100 + ((sp - 10) * 4.95);
+      }
+      subtotal += (tp * 15.95) + (mw * 18.95) + (fe * 18.95);
+
+      const gst = subtotal * 0.10;
+      const totalInc = subtotal + gst;
+
+      document.getElementById('total').innerText = '$' + subtotal.toFixed(2);
+      document.getElementById('quoteTotal').value = '$' + subtotal.toFixed(2);
+      document.getElementById('quoteGst').value = '$' + gst.toFixed(2);
+      document.getElementById('quoteTotalInc').value = '$' + totalInc.toFixed(2);
+    }
+
+    async function handleWeb3Submit(e) {
+      e.preventDefault();
+      const sendBtn = document.getElementById('sendBtn');
+      sendBtn.disabled = true;
+      sendBtn.innerHTML = '<span>⏳</span> Sending request...';
+
+      const form = document.getElementById('quoteForm');
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        const res = await response.json();
+
+        if (res.success) {
+          document.getElementById('requestState').style.display = 'block';
+          sendBtn.style.display = 'none';
+        } else {
+          alert('Submission failed. Please call Mak directly on 0448 917 087.');
+          sendBtn.disabled = false;
+          sendBtn.innerHTML = '<span>✉</span> Send my quote';
+        }
+      } catch (err) {
+        alert('An error occurred. Please call Mak directly on 0448 917 087.');
+        sendBtn.disabled = false;
+        sendBtn.innerHTML = '<span>✉</span> Send my quote';
+      }
+    }
+  </script>
 </body>
 </html>

@@ -2,10 +2,10 @@
 <html lang="en-AU">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Pulse Test and Tag Perth — instant test and tag quotes for electrical safety services." />
   <title>Pulse Test and Tag Perth | Instant Quote</title>
-  <link rel="icon" href="assets/pulse-logo.png" />
+  <link rel="icon" href="pulse-logo.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -31,7 +31,7 @@
       <div class="quote-shell">
         <div class="quote-intro">
           <div class="mini-brand">
-            <img src="assets/pulse-logo.png" alt="Pulse Test and Tag Perth" onerror="this.style.display='none'" />
+            <img src="pulse-logo.png" alt="Pulse Test and Tag Perth" />
           </div>
           <div class="title-line">
             <span class="sliders">☷</span>
@@ -42,35 +42,34 @@
           </div>
           <div class="rule"></div>
 
-          <form id="quoteForm" onsubmit="handleQuoteSubmit(event)">
-            <!-- WEB3FORMS KEY & HIDDEN METADATA -->
+          <!-- WEB3FORMS NATIVE POST FORM -->
+          <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="197459b2-5d3c-4fb0-997a-0d54102d7a5e">
             <input type="hidden" name="subject" value="New Pulse Test & Tag Quote Request">
             <input type="hidden" name="from_name" value="Pulse Test & Tag Perth Website">
-            
-            <!-- DYNAMIC CALCULATED FIELDS FOR EMAIL SUMMARY -->
-            <input type="hidden" name="Quote_Summary" id="hiddenSummary" value="No items selected">
-            <input type="hidden" name="Subtotal_Ex_GST" id="hiddenSubtotal" value="$0.00">
-            <input type="hidden" name="GST_Amount" id="hiddenGst" value="$0.00">
-            <input type="hidden" name="Total_Inc_GST" id="hiddenTotalInc" value="$0.00">
+
+            <!-- CALCULATED FORM VALUES FOR EMAIL -->
+            <input type="hidden" name="Estimate_Ex_GST" id="quoteTotal" value="$0.00">
+            <input type="hidden" name="Estimate_GST" id="quoteGst" value="$0.00">
+            <input type="hidden" name="Estimate_Inc_GST" id="quoteTotalInc" value="$0.00">
 
             <div class="quantity-list">
               <label class="quantity-field">
                 <span class="field-title">Single Phase Test &amp; Tag</span>
                 <span class="field-help">First 10 tags $100, then $4.95 each</span>
-                <input type="number" min="0" step="1" value="0" name="Single_Phase_Qty" id="singlePhase" inputmode="numeric" oninput="updateCalculations()" />
+                <input type="number" min="0" step="1" value="0" name="Single_Phase_Qty" id="singlePhase" inputmode="numeric" oninput="calculateEstimate()" />
               </label>
               <label class="quantity-field">
                 <span class="field-title">3 Phase Test &amp; Tag <em>($15.95 each)</em></span>
-                <input type="number" min="0" step="1" value="0" name="Three_Phase_Qty" id="threePhase" inputmode="numeric" oninput="updateCalculations()" />
+                <input type="number" min="0" step="1" value="0" name="Three_Phase_Qty" id="threePhase" inputmode="numeric" oninput="calculateEstimate()" />
               </label>
               <label class="quantity-field">
                 <span class="field-title">Microwave Radiation Test <em>($18.95 each)</em></span>
-                <input type="number" min="0" step="1" value="0" name="Microwave_Qty" id="microwave" inputmode="numeric" oninput="updateCalculations()" />
+                <input type="number" min="0" step="1" value="0" name="Microwave_Qty" id="microwave" inputmode="numeric" oninput="calculateEstimate()" />
               </label>
               <label class="quantity-field">
                 <span class="field-title">Fire Extinguisher Test <em>($18.95 each)</em></span>
-                <input type="number" min="0" step="1" value="0" name="Fire_Extinguisher_Qty" id="fire" inputmode="numeric" oninput="updateCalculations()" />
+                <input type="number" min="0" step="1" value="0" name="Fire_Extinguisher_Qty" id="fire" inputmode="numeric" oninput="calculateEstimate()" />
               </label>
             </div>
 
@@ -97,30 +96,14 @@
             <span class="live-dot">LIVE</span>
           </div>
           <div class="estimate-rule"></div>
-          
           <div class="estimate-total">
             <span>Estimated Total <small>(Excl. GST)</small></span>
             <strong id="total">$0.00</strong>
           </div>
-
           <div class="estimate-items" id="estimateList">
             <div class="empty-state"><span class="check-circle">✓</span><p>Select quantities to see your estimate.</p></div>
           </div>
-
-          <div class="estimate-tax-breakdown" id="taxBreakdown" style="font-size:0.9rem; margin:1rem 0; color:#555;">
-            <div>GST (10%): <strong id="gstDisplay">$0.00</strong></div>
-            <div>Total (Inc. GST): <strong id="totalIncDisplay">$0.00</strong></div>
-          </div>
-
-          <div class="request-state" id="requestState" style="display: none;">
-            <div class="success-check">✓</div>
-            <h3>Request received!</h3>
-            <p>Your quote has been sent to Mak at Pulse Test and Tag Perth.</p>
-            <a href="tel:0448917087">Need it sooner? Call <strong>0448 917 087</strong>.</a>
-          </div>
-
           <div class="estimate-foot">Your request goes straight to Mak at Pulse Test and Tag. Estimates exclude GST.</div>
-          <div id="status" class="status" role="status"></div>
         </aside>
       </div>
     </section>
@@ -152,7 +135,7 @@
           <div class="trust-pills"><span>✓ AU/NZ Standards</span><span>✓ Local Perth Service</span><span>✓ Fast Response</span></div>
         </div>
         <div class="contact-panel" id="contact">
-          <img src="assets/pulse-logo.png" alt="Pulse Test and Tag Perth logo" onerror="this.style.display='none'" />
+          <img src="pulse-logo.png" alt="Pulse Test and Tag Perth logo" />
           <h3>Mak (Maulik) Patel</h3><span>OWNER</span>
           <a href="tel:0448917087">0448 917 087</a>
           <a href="mailto:mak.p@pulsetestandtag.com.au">mak.p@pulsetestandtag.com.au</a>
@@ -162,103 +145,56 @@
     </section>
   </main>
 
-  <footer>
-    <div>© <span id="year"></span> Pulse Test and Tag Perth</div>
-    <div>Electrical Safety &amp; Appliance Services</div>
-  </footer>
+  <footer><div>© <span id="year"></span> Pulse Test and Tag Perth</div><div>Electrical Safety &amp; Appliance Services</div></footer>
 
   <script src="app.js"></script>
   <script>
     document.getElementById('year').innerText = new Date().getFullYear();
 
-    function updateCalculations() {
+    function calculateEstimate() {
       const sp = parseInt(document.getElementById('singlePhase').value) || 0;
       const tp = parseInt(document.getElementById('threePhase').value) || 0;
       const mw = parseInt(document.getElementById('microwave').value) || 0;
       const fe = parseInt(document.getElementById('fire').value) || 0;
 
       let subtotal = 0;
-      const breakdownItems = [];
+      let listHtml = '';
 
       if (sp > 0) {
         const spCost = (sp <= 10) ? 100 : 100 + ((sp - 10) * 4.95);
         subtotal += spCost;
-        breakdownItems.push(`${sp}x Single Phase ($${spCost.toFixed(2)})`);
+        listHtml += `<div class="estimate-row"><span>Single Phase (${sp})</span><strong>$${spCost.toFixed(2)}</strong></div>`;
       }
-
       if (tp > 0) {
         const tpCost = tp * 15.95;
         subtotal += tpCost;
-        breakdownItems.push(`${tp}x 3 Phase ($${tpCost.toFixed(2)})`);
+        listHtml += `<div class="estimate-row"><span>3 Phase (${tp})</span><strong>$${tpCost.toFixed(2)}</strong></div>`;
       }
-
       if (mw > 0) {
         const mwCost = mw * 18.95;
         subtotal += mwCost;
-        breakdownItems.push(`${mw}x Microwave Test ($${mwCost.toFixed(2)})`);
+        listHtml += `<div class="estimate-row"><span>Microwave (${mw})</span><strong>$${mwCost.toFixed(2)}</strong></div>`;
       }
-
       if (fe > 0) {
         const feCost = fe * 18.95;
         subtotal += feCost;
-        breakdownItems.push(`${fe}x Fire Extinguisher ($${feCost.toFixed(2)})`);
+        listHtml += `<div class="estimate-row"><span>Fire Extinguisher (${fe})</span><strong>$${feCost.toFixed(2)}</strong></div>`;
+      }
+
+      if (subtotal === 0) {
+        document.getElementById('estimateList').innerHTML = '<div class="empty-state"><span class="check-circle">✓</span><p>Select quantities to see your estimate.</p></div>';
+      } else {
+        document.getElementById('estimateList').innerHTML = listHtml;
       }
 
       const gst = subtotal * 0.10;
       const totalInc = subtotal + gst;
 
-      // Update UI elements
       document.getElementById('total').innerText = '$' + subtotal.toFixed(2);
-      document.getElementById('gstDisplay').innerText = '$' + gst.toFixed(2);
-      document.getElementById('totalIncDisplay').innerText = '$' + totalInc.toFixed(2);
-
-      const estimateList = document.getElementById('estimateList');
-      if (breakdownItems.length === 0) {
-        estimateList.innerHTML = '<div class="empty-state"><span class="check-circle">✓</span><p>Select quantities to see your estimate.</p></div>';
-      } else {
-        estimateList.innerHTML = breakdownItems.map(item => `<div style="padding:4px 0;">• ${item}</div>`).join('');
-      }
-
-      // Update hidden form fields for email receipt
-      document.getElementById('hiddenSummary').value = breakdownItems.length ? breakdownItems.join(', ') : 'No items selected';
-      document.getElementById('hiddenSubtotal').value = '$' + subtotal.toFixed(2);
-      document.getElementById('hiddenGst').value = '$' + gst.toFixed(2);
-      document.getElementById('hiddenTotalInc').value = '$' + totalInc.toFixed(2);
+      document.getElementById('quoteTotal').value = '$' + subtotal.toFixed(2);
+      document.getElementById('quoteGst').value = '$' + gst.toFixed(2);
+      document.getElementById('quoteTotalInc').value = '$' + totalInc.toFixed(2);
     }
-
-    async function handleQuoteSubmit(e) {
-      e.preventDefault();
-      const sendBtn = document.getElementById('sendBtn');
-      sendBtn.disabled = true;
-      sendBtn.innerHTML = '<span>⏳</span> Sending request...';
-
-      const form = document.getElementById('quoteForm');
-      const formData = new FormData(form);
-
-      try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          body: formData
-        });
-        const res = await response.json();
-
-        if (res.success) {
-          document.getElementById('requestState').style.display = 'block';
-          sendBtn.style.display = 'none';
-        } else {
-          alert('Submission failed: ' + (res.message || 'Please check your form entries and try again.'));
-          sendBtn.disabled = false;
-          sendBtn.innerHTML = '<span>✉</span> Send my quote';
-        }
-      } catch (err) {
-        alert('An error occurred. Please try submitting again or call 0448 917 087.');
-        sendBtn.disabled = false;
-        sendBtn.innerHTML = '<span>✉</span> Send my quote';
-      }
-    }
-
-    // Initial calculation setup on page load
-    window.addEventListener('DOMContentLoaded', updateCalculations);
   </script>
 </body>
 </html>

@@ -7,6 +7,39 @@
   <title>Pulse Test and Tag Perth | Instant Quote</title>
   <link rel="icon" href="pulse-logo.png" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Inline styles for side-by-side total grid */
+    .estimate-totals-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .total-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .total-col span {
+      font-size: 0.75rem;
+      color: #6b7280;
+      margin-bottom: 2px;
+    }
+    .total-col strong {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111827;
+    }
+    .total-col.highlight strong {
+      color: #059669;
+    }
+    .error-msg {
+      color: #dc2626;
+      font-size: 0.85rem;
+      margin-top: 8px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -43,7 +76,7 @@
           <div class="rule"></div>
 
           <!-- WEB3FORMS NATIVE POST FORM -->
-          <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST">
+          <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateQuoteForm(event)">
             <input type="hidden" name="access_key" value="197459b2-5d3c-4fb0-997a-0d54102d7a5e">
             <input type="hidden" name="subject" value="New Pulse Test & Tag Quote Request">
             <input type="hidden" name="from_name" value="Pulse Test & Tag Perth Website">
@@ -62,6 +95,10 @@
               <label class="quantity-field">
                 <span class="field-title">3 Phase Test &amp; Tag <em>($15.95 each)</em></span>
                 <input type="number" min="0" step="1" value="0" name="Three_Phase_Qty" id="threePhase" inputmode="numeric" oninput="calculateEstimate()" />
+              </label>
+              <label class="quantity-field">
+                <span class="field-title">RCD Testing <em>($15.95 each)</em></span>
+                <input type="number" min="0" step="1" value="0" name="RCD_Qty" id="rcdTesting" inputmode="numeric" oninput="calculateEstimate()" />
               </label>
               <label class="quantity-field">
                 <span class="field-title">Microwave Radiation Test <em>($18.95 each)</em></span>
@@ -85,6 +122,7 @@
               </div>
             </div>
 
+            <p id="formError" class="error-msg">Please select at least one item quantity before submitting.</p>
             <button class="send-btn" id="sendBtn" type="submit"><span>✉</span> Send my quote</button>
             <p class="privacy-note">No payment is taken online. Prices shown are estimates and exclude GST.</p>
           </form>
@@ -96,14 +134,22 @@
             <span class="live-dot">LIVE</span>
           </div>
           <div class="estimate-rule"></div>
-          <div class="estimate-total">
-            <span>Estimated Total <small>(Excl. GST)</small></span>
-            <strong id="total">$0.00</strong>
+
+          <div class="estimate-totals-grid">
+            <div class="total-col">
+              <span>Estimated Total <small>(Excl. GST)</small></span>
+              <strong id="totalExGst">$0.00</strong>
+            </div>
+            <div class="total-col highlight">
+              <span>Estimated Total <small>(Incl. GST)</small></span>
+              <strong id="totalIncGst">$0.00</strong>
+            </div>
           </div>
+
           <div class="estimate-items" id="estimateList">
             <div class="empty-state"><span class="check-circle">✓</span><p>Select quantities to see your estimate.</p></div>
           </div>
-          <div class="estimate-foot">Your request goes straight to Mak at Pulse Test and Tag. Estimates exclude GST.</div>
+          <div class="estimate-foot">Your request goes straight to Mak at Pulse Test and Tag. Prices subject to site verification.</div>
         </aside>
       </div>
     </section>
@@ -152,10 +198,11 @@
     document.getElementById('year').innerText = new Date().getFullYear();
 
     function calculateEstimate() {
-      const sp = parseInt(document.getElementById('singlePhase').value) || 0;
-      const tp = parseInt(document.getElementById('threePhase').value) || 0;
-      const mw = parseInt(document.getElementById('microwave').value) || 0;
-      const fe = parseInt(document.getElementById('fire').value) || 0;
+      const sp = parseInt(document.getElementById('singlePhase').value, 10) || 0;
+      const tp = parseInt(document.getElementById('threePhase').value, 10) || 0;
+      const rcd = parseInt(document.getElementById('rcdTesting').value, 10) || 0;
+      const mw = parseInt(document.getElementById('microwave').value, 10) || 0;
+      const fe = parseInt(document.getElementById('fire').value, 10) || 0;
 
       let subtotal = 0;
       let listHtml = '';
@@ -169,6 +216,11 @@
         const tpCost = tp * 15.95;
         subtotal += tpCost;
         listHtml += `<div class="estimate-row"><span>3 Phase (${tp})</span><strong>$${tpCost.toFixed(2)}</strong></div>`;
+      }
+      if (rcd > 0) {
+        const rcdCost = rcd * 15.95;
+        subtotal += rcdCost;
+        listHtml += `<div class="estimate-row"><span>RCD Testing (${rcd})</span><strong>$${rcdCost.toFixed(2)}</strong></div>`;
       }
       if (mw > 0) {
         const mwCost = mw * 18.95;
@@ -190,11 +242,33 @@
       const gst = subtotal * 0.10;
       const totalInc = subtotal + gst;
 
-      document.getElementById('total').innerText = '$' + subtotal.toFixed(2);
+      document.getElementById('totalExGst').innerText = '$' + subtotal.toFixed(2);
+      document.getElementById('totalIncGst').innerText = '$' + totalInc.toFixed(2);
+
       document.getElementById('quoteTotal').value = '$' + subtotal.toFixed(2);
       document.getElementById('quoteGst').value = '$' + gst.toFixed(2);
       document.getElementById('quoteTotalInc').value = '$' + totalInc.toFixed(2);
     }
+
+    function validateQuoteForm(event) {
+      const sp = parseInt(document.getElementById('singlePhase').value, 10) || 0;
+      const tp = parseInt(document.getElementById('threePhase').value, 10) || 0;
+      const rcd = parseInt(document.getElementById('rcdTesting').value, 10) || 0;
+      const mw = parseInt(document.getElementById('microwave').value, 10) || 0;
+      const fe = parseInt(document.getElementById('fire').value, 10) || 0;
+
+      const totalItems = sp + tp + rcd + mw + fe;
+      const errorElem = document.getElementById('formError');
+
+      if (totalItems === 0) {
+        errorElem.style.display = 'block';
+        return false;
+      }
+      errorElem.style.display = 'none';
+      return true;
+    }
+
+    document.addEventListener('DOMContentLoaded', calculateEstimate);
   </script>
 </body>
 </html>

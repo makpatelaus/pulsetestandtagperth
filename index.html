@@ -1,157 +1,415 @@
-<!doctype html>
-<html lang="en-AU">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Pulse Test and Tag Perth — instant test and tag quotes for electrical safety services." />
-  <title>Pulse Test and Tag Perth | Instant Quote</title>
-  <link rel="icon" href="assets/pulse-logo.png" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulse Test and Tag Perth | Electrical Safety & Appliance Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .hero-gradient { background: linear-gradient(135deg, #0b1528 0%, #112240 50%, #0d1b2a 100%); }
+    .card-glow { transition: all 0.3s ease; }
+    .card-glow:hover { transform: translateY(-3px); box-shadow: 0 12px 30px -10px rgba(14, 165, 233, 0.25); }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type=number] { -moz-appearance: textfield; }
+  </style>
 </head>
-<body>
-  <header class="site-header">
-    <div class="nav-shell">
-      <a class="brand" href="#top" aria-label="Pulse Test and Tag Perth home">
-        <span class="brand-mark">⌁</span>
-        <span class="brand-word"><strong>PULSE</strong><small>TEST AND TAG</small></span>
-        <span class="brand-perth">PERTH</span>
+<body class="bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- TOP BAR -->
+  <div class="bg-sky-950/80 border-b border-sky-900/40 text-xs text-sky-200 py-2 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-4">
+        <span>📍 Perth & Surrounding Suburbs</span>
+        <span>⚡ AS/NZS 3760:2022 Compliant</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="tel:0448917087" class="hover:text-sky-400 font-semibold transition">📞 0448 917 087</a>
+        <span>✉️ mak.p@pulsetestandtag.com.au</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- LOGO INTEGRATION -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="bg-white p-1.5 rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+          <svg class="w-10 h-10" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="80" r="60" stroke="#0ea5e9" stroke-width="12" stroke-dasharray="320 50" stroke-dashoffset="20" stroke-linecap="round"/>
+            <circle cx="140" cy="45" r="6" fill="#0ea5e9"/>
+            <path d="M 80 65 L 115 65 C 128 65 135 73 135 85 C 135 97 128 105 115 105 L 80 105 Z" fill="none" stroke="#0ea5e9" stroke-width="10" stroke-linejoin="round"/>
+            <line x1="68" y1="75" x2="80" y2="75" stroke="#0ea5e9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="68" y1="95" x2="80" y2="95" stroke="#0ea5e9" stroke-width="10" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-2xl font-extrabold tracking-wider text-white uppercase leading-none">PULSE</span>
+          <span class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mt-1">TEST AND TAG</span>
+          <span class="text-[9px] font-bold text-sky-400 tracking-widest uppercase">PERTH</span>
+        </div>
       </a>
-      <nav class="desktop-nav" aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#quote">Instant Quote</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+        <a href="#services" class="hover:text-sky-400 transition">Services</a>
+        <a href="#quote" class="hover:text-sky-400 transition">Instant Quote</a>
+        <a href="#standards" class="hover:text-sky-400 transition">Standards & Compliance</a>
+        <a href="tel:0448917087" class="bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold px-5 py-2.5 rounded-lg shadow-lg transition">
+          Call 0448 917 087
+        </a>
       </nav>
-      <a class="header-call" href="tel:0448917087">0448 917 087</a>
     </div>
   </header>
 
-  <main id="top">
-    <section class="quote-hero" id="quote">
-      <div class="quote-shell">
-        <div class="quote-intro">
-          <div class="mini-brand">
-            <img src="assets/pulse-logo.png" alt="Pulse Test and Tag Perth" />
-          </div>
-          <div class="title-line">
-            <span class="sliders">☷</span>
-            <div>
-              <h1>Select Quantities</h1>
-              <p>Build your estimate in seconds. Your quote is sent straight to you and copied to Mak.</p>
-            </div>
-          </div>
-          <div class="rule"></div>
+  <!-- HERO SECTION -->
+  <section class="hero-gradient py-12 lg:py-16 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-bold px-3.5 py-1.5 rounded-full mb-4">
+          <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+          Instant Online Calculator & Quotes
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+          Electrical Safety & Appliance Testing in Perth
+        </h1>
+        <p class="text-slate-300 text-base sm:text-lg">
+          Safe • Compliant • Professional • On Time. Managed by <strong class="text-white">Maulik (Mak) Patel</strong>.
+        </p>
+      </div>
 
-          <form id="quoteForm" action="https://formsubmit.co/mak.p@pulsetestandtag.com.au" method="POST">
-            <input type="hidden" name="_subject" value="New Pulse Test & Tag Quote Request">
-            <input type="hidden" name="_cc" value="mak.p@pulsetestandtag.com.au">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_autoresponse" id="autoResponse" value="Thank you for your quote request. Mak from Pulse Test and Tag Perth will be in touch shortly.">
-            <input type="hidden" name="_next" id="nextUrl" value="">
-            <input type="hidden" name="quote_summary" id="quoteSummary" value="">
-            <input type="hidden" name="estimated_total_ex_gst" id="quoteTotal" value="">
-            <input type="hidden" name="estimated_gst" id="quoteGst" value="">
-            <input type="hidden" name="estimated_total_inc_gst" id="quoteTotalInc" value="">
-            <div class="quantity-list">
-              <label class="quantity-field">
-                <span class="field-title">Single Phase Test &amp; Tag</span>
-                <span class="field-help">First 10 tags $100, then $4.95 each</span>
-                <input type="number" min="0" step="1" value="0" name="singlePhase" inputmode="numeric" />
-              </label>
-              <label class="quantity-field">
-                <span class="field-title">3 Phase Test &amp; Tag <em>($15.95 each)</em></span>
-                <input type="number" min="0" step="1" value="0" name="threePhase" inputmode="numeric" />
-              </label>
-              <label class="quantity-field">
-                <span class="field-title">Microwave Radiation Test <em>($18.95 each)</em></span>
-                <input type="number" min="0" step="1" value="0" name="microwave" inputmode="numeric" />
-              </label>
-              <label class="quantity-field">
-                <span class="field-title">Fire Extinguisher Test <em>($18.95 each)</em></span>
-                <input type="number" min="0" step="1" value="0" name="fire" inputmode="numeric" />
-              </label>
-            </div>
+      <!-- MAIN QUOTE CALCULATOR CONTAINER -->
+      <div id="quote" class="bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+        
+        <!-- QUANTITY SELECTION FORM (LEFT) -->
+        <div class="lg:col-span-7 p-6 sm:p-8 space-y-6">
+          <div class="border-b border-slate-800 pb-4">
+            <h2 class="text-xl font-bold text-white flex items-center gap-2">
+              <span>⚙️</span> Select Quantities
+            </h2>
+            <p class="text-xs text-slate-400 mt-1">Enter estimated items needing testing to calculate your quote.</p>
+          </div>
 
-            <div class="client-box">
-              <div class="client-heading"><span>CLIENT DETAILS</span><small>Needed to send your quote</small></div>
-              <div class="client-grid">
-                <label>Your name<input required name="name" placeholder="Full name" /></label>
-                <label>Email<input required type="email" name="email" placeholder="you@company.com.au" /></label>
-                <label>Phone<input name="phone" placeholder="04xx xxx xxx" /></label>
-                <label>Company<input name="company" placeholder="Company name" /></label>
-                <label class="full">Site address<input name="address" placeholder="Workplace / site address" /></label>
-                <label class="full">Notes<textarea name="notes" rows="3" placeholder="Anything Mak should know?"></textarea></label>
+          <form id="quoteForm" onsubmit="handleQuoteSubmit(event)" class="space-y-4">
+            
+            <!-- ITEM 1 -->
+            <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 card-glow">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                <div>
+                  <label class="font-bold text-slate-200 text-sm block">Single Phase Test & Tag</label>
+                  <span class="text-xs text-slate-400">First 10 tags total $100 min, then $4.95 each (AS/NZS 3760:2022)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="adjustQty('singlePhase', -1)" class="bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-lg font-bold text-lg">-</button>
+                  <input type="number" id="singlePhase" min="0" value="0" oninput="calculateTotal()" class="w-20 bg-slate-900 border border-slate-700 text-center font-bold text-sky-400 rounded-lg py-1.5 focus:border-sky-500 outline-none">
+                  <button type="button" onclick="adjustQty('singlePhase', 1)" class="bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-lg font-bold text-lg">+</button>
+                </div>
               </div>
             </div>
 
-            <button class="send-btn" type="submit"><span>✉</span> Send my quote</button>
-            <p class="privacy-note">No payment is taken online. Prices shown are estimates and exclude GST.</p>
+            <!-- ITEM 2 -->
+            <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 card-glow">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                <div>
+                  <label class="font-bold text-slate-200 text-sm block">3 Phase Test & Tag / Repairs</label>
+                  <span class="text-xs text-slate-400">$15.95 per item (Fault finding & maintenance)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="adjustQty('threePhase', -1)" class="bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-lg font-bold text-lg">-</button>
+                  <input type="number" id="threePhase" min="0" value="0" oninput="calculateTotal()" class="w-20 bg-slate-900 border border-slate-700 text-center font-bold text-sky-400 rounded-lg py-1.5 focus:border-sky-500 outline-none">
+                  <button type="button" onclick="adjustQty('threePhase', 1)" class="bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-lg font-bold text-lg">+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- ITEM 3 -->
+            <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 card-glow">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                <div>
+                  <label class="font-bold text-slate-200 text-sm block">Microwave Radiation Test</label>
+                  <span class="text-xs text-slate-400">$18.95 per unit (AS/NZS 60335.2.25:2012)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="adjustQty('microwave', -1)" class="bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-lg font-bold text-lg">-</button>
+                  <input type="number" id="microwave" min="0" value="0" oninput="calculateTotal()" class="w-20 bg-slate-900 border border-slate-700 text-center font-bold text-sky-400 rounded-lg py-1.5 focus:border-sky-500 outline-none">
+                  <button type="button" onclick="adjustQty('microwave', 1)" class="bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-lg font-bold text-lg">+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- ITEM 4 -->
+            <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 card-glow">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                <div>
+                  <label class="font-bold text-slate-200 text-sm block">Fire Extinguisher Test & Tag</label>
+                  <span class="text-xs text-slate-400">$18.95 per unit (AS 1851:2012 Compliance)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="adjustQty('extinguisher', -1)" class="bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-lg font-bold text-lg">-</button>
+                  <input type="number" id="extinguisher" min="0" value="0" oninput="calculateTotal()" class="w-20 bg-slate-900 border border-slate-700 text-center font-bold text-sky-400 rounded-lg py-1.5 focus:border-sky-500 outline-none">
+                  <button type="button" onclick="adjustQty('extinguisher', 1)" class="bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-lg font-bold text-lg">+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- CLIENT DETAILS SECTION -->
+            <div class="pt-4 border-t border-slate-800 space-y-3">
+              <h3 class="font-bold text-slate-200 text-sm">Client Information</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <input type="text" id="clientName" required placeholder="Your Full Name *" class="bg-slate-950 border border-slate-800 text-sm rounded-lg p-2.5 focus:border-sky-500 outline-none text-slate-200">
+                <input type="email" id="clientEmail" required placeholder="Your Email Address *" class="bg-slate-950 border border-slate-800 text-sm rounded-lg p-2.5 focus:border-sky-500 outline-none text-slate-200">
+                <input type="tel" id="clientPhone" required placeholder="Phone Number *" class="bg-slate-950 border border-slate-800 text-sm rounded-lg p-2.5 focus:border-sky-500 outline-none text-slate-200">
+                <input type="text" id="clientAddress" placeholder="Business Address / Suburb" class="bg-slate-950 border border-slate-800 text-sm rounded-lg p-2.5 focus:border-sky-500 outline-none text-slate-200">
+              </div>
+            </div>
+
+            <button type="submit" id="submitBtn" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base">
+              <span>✉️</span> Send Instant Quote Request
+            </button>
           </form>
         </div>
 
-        <aside class="estimate-card" aria-live="polite">
-          <div class="estimate-header">
-            <div class="estimate-title"><span class="receipt-icon">▤</span><h2>Price Estimate</h2></div>
-            <span class="live-dot">LIVE</span>
-          </div>
-          <div class="estimate-rule"></div>
-          <div class="estimate-total">
-            <span>Estimated Total <small>(Excl. GST)</small></span>
-            <strong id="total">$0.00</strong>
-          </div>
-          <div class="estimate-items" id="estimateList">
-            <div class="empty-state"><span class="check-circle">✓</span><p>Select quantities to see your estimate.</p></div>
-          </div>
-          <div class="request-state" id="requestState">
-            <div class="success-check">✓</div>
-            <h3>Request received!</h3>
-            <p>Your quote will be sent to your email and copied to Mak at Pulse Test and Tag.</p>
-            <a href="tel:0448917087">Need it sooner? Call <strong>0448 917 087</strong>.</a>
-          </div>
-          <div class="estimate-foot">Your request goes straight to Mak at Pulse Test and Tag. Estimates exclude GST.</div>
-          <div id="status" class="status" role="status"></div>
-        </aside>
-      </div>
-    </section>
+        <!-- LIVE PRICE SUMMARY SIDEBAR (RIGHT) -->
+        <div class="lg:col-span-5 bg-slate-950/80 border-t lg:border-t-0 lg:border-l border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+              <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                <span>🧾</span> Quote Estimate
+              </h3>
+              <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">AUD</span>
+            </div>
 
-    <section class="service-band" id="services">
-      <div class="services-shell">
-        <div class="services-heading">
-          <span>OUR SERVICES</span>
-          <h2>Electrical safety services</h2>
-          <p>Professional, compliant and on-time service across Perth.</p>
-        </div>
-        <div class="service-grid">
-          <article><div class="service-icon">🏷</div><div><h3>Test and Tag</h3><p>AS/NZS 3760:2022</p></div><b>✓</b></article>
-          <article><div class="service-icon">▣</div><div><h3>RCD Testing</h3><p>AS/NZS 3760:2022</p></div><b>✓</b></article>
-          <article><div class="service-icon">♧</div><div><h3>Fire Extinguisher</h3><p>AS 1851:2012</p></div><b>✓</b></article>
-          <article><div class="service-icon">◉</div><div><h3>Microwave Radiation</h3><p>AS/NZS 60335.2.25:2012</p></div><b>✓</b></article>
-          <article><div class="service-icon">⚒</div><div><h3>Appliance Repairs</h3><p>Safe &amp; reliable</p></div><b>✓</b></article>
-          <article><div class="service-icon">⚡</div><div><h3>3 Phase Testing</h3><p>Testing, repairs &amp; maintenance</p></div><b>✓</b></article>
-        </div>
-      </div>
-    </section>
+            <!-- CALCULATION BREAKDOWN -->
+            <div class="space-y-3 text-sm mb-6">
+              <div class="flex justify-between text-slate-400">
+                <span>Subtotal (Excl. GST):</span>
+                <span id="subtotalDisplay" class="font-mono text-slate-200">$0.00</span>
+              </div>
+              <div class="flex justify-between text-slate-400">
+                <span>GST (10%):</span>
+                <span id="gstDisplay" class="font-mono text-slate-200">$0.00</span>
+              </div>
+              <div class="border-t border-slate-800 pt-3 flex justify-between text-lg font-bold text-white">
+                <span>Estimated Total:</span>
+                <span id="totalDisplay" class="font-mono text-emerald-400 text-2xl">$0.00</span>
+              </div>
+            </div>
 
-    <section class="about-section" id="about">
-      <div class="about-shell">
-        <div>
-          <span class="eyebrow">PULSE TEST AND TAG PERTH</span>
-          <h2>Safe. Compliant. Professional. On Time.</h2>
-          <p>Electrical Safety &amp; Appliance Services for Perth workplaces. Get an estimate online, then Mak will contact you to confirm the appointment and scope.</p>
-          <div class="trust-pills"><span>✓ AU/NZ Standards</span><span>✓ Local Perth Service</span><span>✓ Fast Response</span></div>
-        </div>
-        <div class="contact-panel" id="contact">
-          <img src="assets/pulse-logo.png" alt="Pulse Test and Tag Perth logo" />
-          <h3>Mak (Maulik) Patel</h3><span>OWNER</span>
-          <a href="tel:0448917087">0448 917 087</a>
-          <a href="mailto:mak.p@pulsetestandtag.com.au">mak.p@pulsetestandtag.com.au</a>
-          <a href="https://www.pulsetestandtag.com.au" target="_blank" rel="noopener">www.pulsetestandtag.com.au</a>
-        </div>
-      </div>
-    </section>
-  </main>
+            <!-- STATUS BOX -->
+            <div id="statusBox" class="hidden bg-slate-900 border border-emerald-500/40 rounded-xl p-4 text-center space-y-3">
+              <div class="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto text-xl font-bold">✓</div>
+              <h4 class="text-white font-bold text-base">Quote Sent Successfully!</h4>
+              <p class="text-xs text-slate-300">
+                A copy has been dispatched directly to <strong class="text-white" id="confirmEmail"></strong> and to <strong class="text-sky-400">mak.p@pulsetestandtag.com.au</strong>.
+              </p>
+              <button onclick="resetCalculator()" class="text-xs text-sky-400 underline hover:text-sky-300 mt-2 block mx-auto">Create Another Quote</button>
+            </div>
+          </div>
 
-  <footer><div>© <span id="year"></span> Pulse Test and Tag Perth</div><div>Electrical Safety &amp; Appliance Services</div></footer>
-  <script src="app.js"></script>
+          <!-- DIRECT CONTACT BADGE -->
+          <div class="mt-8 pt-6 border-t border-slate-800 text-xs text-slate-400 space-y-2">
+            <p class="flex items-center gap-2">
+              <span>👤</span> Direct contact: <strong>Mak Patel (Owner)</strong>
+            </p>
+            <p class="flex items-center gap-2">
+              <span>📞</span> Urgent response? Call <a href="tel:0448917087" class="text-sky-400 underline font-bold">0448 917 087</a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="py-16 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Our Testing & Tagging Services</h2>
+        <p class="text-slate-400 text-sm mt-2">Full compliance testing performed strictly according to Australian & New Zealand Standards.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-3 card-glow">
+          <div class="w-10 h-10 bg-sky-500/10 text-sky-400 rounded-lg flex items-center justify-center text-xl font-bold">🔌</div>
+          <h3 class="font-bold text-white text-lg">Test and Tag</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Comprehensive testing of portable electrical equipment to ensure workplace safety compliance.</p>
+          <span class="inline-block text-[11px] bg-slate-800 text-sky-300 px-2.5 py-1 rounded font-semibold">AS/NZS 3760:2022</span>
+        </div>
+
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-3 card-glow">
+          <div class="w-10 h-10 bg-sky-500/10 text-sky-400 rounded-lg flex items-center justify-center text-xl font-bold">⚡</div>
+          <h3 class="font-bold text-white text-lg">RCD Safety Switch Testing</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Testing trip times and current thresholds to guarantee immediate tripping in fault situations.</p>
+          <span class="inline-block text-[11px] bg-slate-800 text-sky-300 px-2.5 py-1 rounded font-semibold">RCD Requirements</span>
+        </div>
+
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-3 card-glow">
+          <div class="w-10 h-10 bg-sky-500/10 text-sky-400 rounded-lg flex items-center justify-center text-xl font-bold">🧯</div>
+          <h3 class="font-bold text-white text-lg">Fire Extinguisher Inspection</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Periodic maintenance and tagging of fire safety equipment for commercial facilities.</p>
+          <span class="inline-block text-[11px] bg-slate-800 text-sky-300 px-2.5 py-1 rounded font-semibold">AS 1851:2012</span>
+        </div>
+
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-3 card-glow">
+          <div class="w-10 h-10 bg-sky-500/10 text-sky-400 rounded-lg flex items-center justify-center text-xl font-bold">📻</div>
+          <h3 class="font-bold text-white text-lg">Microwave Radiation Test</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Leakage and power density testing for commercial and workplace microwave units.</p>
+          <span class="inline-block text-[11px] bg-slate-800 text-sky-300 px-2.5 py-1 rounded font-semibold">AS/NZS 60335.2.25</span>
+        </div>
+
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-3 card-glow">
+          <div class="w-10 h-10 bg-sky-500/10 text-sky-400 rounded-lg flex items-center justify-center text-xl font-bold">🔧</div>
+          <h3 class="font-bold text-white text-lg">Appliance Repairs</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Safe and reliable cord replacement, plug repairs, and electrical fault fixing on-site.</p>
+          <span class="inline-block text-[11px] bg-slate-800 text-sky-300 px-2.5 py-1 rounded font-semibold">Safe & Reliable</span>
+        </div>
+
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-3 card-glow">
+          <div class="w-10 h-10 bg-sky-500/10 text-sky-400 rounded-lg flex items-center justify-center text-xl font-bold">⚙️</div>
+          <h3 class="font-bold text-white text-lg">3-Phase Testing & Maintenance</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Fault finding, insulation resistance testing, and maintenance for industrial 3-phase machinery.</p>
+          <span class="inline-block text-[11px] bg-slate-800 text-sky-300 px-2.5 py-1 rounded font-semibold">Industrial Standard</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 border-t border-slate-800 py-10 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left space-y-1">
+        <p class="font-bold text-slate-200">Pulse Test and Tag Perth</p>
+        <p>Owner: Maulik (Mak) Patel • Phone: 0448 917 087</p>
+        <p>Email: mak.p@pulsetestandtag.com.au</p>
+      </div>
+      <div class="text-center md:text-right text-slate-500">
+        <p>© 2026 Pulse Test and Tag Perth. All rights reserved.</p>
+        <p class="mt-1">Keeping Your Workplace Safe & Compliant across Western Australia.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CALCULATOR & EMAIL SCRIPT -->
+  <script>
+    function adjustQty(id, change) {
+      const input = document.getElementById(id);
+      let val = parseInt(input.value) || 0;
+      val = Math.max(0, val + change);
+      input.value = val;
+      calculateTotal();
+    }
+
+    function calculateTotal() {
+      const singlePhaseQty = parseInt(document.getElementById('singlePhase').value) || 0;
+      const threePhaseQty = parseInt(document.getElementById('threePhase').value) || 0;
+      const microwaveQty = parseInt(document.getElementById('microwave').value) || 0;
+      const extinguisherQty = parseInt(document.getElementById('extinguisher').value) || 0;
+
+      let subtotal = 0;
+
+      if (singlePhaseQty > 0) {
+        if (singlePhaseQty <= 10) {
+          subtotal += 100.00;
+        } else {
+          subtotal += 100.00 + ((singlePhaseQty - 10) * 4.95);
+        }
+      }
+
+      subtotal += threePhaseQty * 15.95;
+      subtotal += microwaveQty * 18.95;
+      subtotal += extinguisherQty * 18.95;
+
+      const gst = subtotal * 0.10;
+      const total = subtotal + gst;
+
+      document.getElementById('subtotalDisplay').innerText = '$' + subtotal.toFixed(2);
+      document.getElementById('gstDisplay').innerText = '$' + gst.toFixed(2);
+      document.getElementById('totalDisplay').innerText = '$' + total.toFixed(2);
+
+      return { subtotal, gst, total, singlePhaseQty, threePhaseQty, microwaveQty, extinguisherQty };
+    }
+
+    async function handleQuoteSubmit(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submitBtn');
+      const statusBox = document.getElementById('statusBox');
+      
+      const calc = calculateTotal();
+      const name = document.getElementById('clientName').value;
+      const email = document.getElementById('clientEmail').value;
+      const phone = document.getElementById('clientPhone').value;
+      const address = document.getElementById('clientAddress').value || 'Not provided';
+
+      if (calc.total === 0) {
+        alert('Please enter at least 1 item quantity to generate a quote request.');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Sending Request...';
+
+      const formData = {
+        access_key: "3c3e8061-0a6d-4ee8-9f1e-f3a3d2482fa8",
+        subject: `New Online Quote Request from ${name}`,
+        from_name: "Pulse Test & Tag Perth Website",
+        to_email: "mak.p@pulsetestandtag.com.au",
+        client_name: name,
+        client_email: email,
+        client_phone: phone,
+        client_address: address,
+        single_phase_qty: calc.singlePhaseQty,
+        three_phase_qty: calc.threePhaseQty,
+        microwave_qty: calc.microwaveQty,
+        extinguisher_qty: calc.extinguisherQty,
+        subtotal: `$${calc.subtotal.toFixed(2)}`,
+        gst: `$${calc.gst.toFixed(2)}`,
+        estimated_total: `$${calc.total.toFixed(2)}`
+      };
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+        
+        if (result.success) {
+          document.getElementById('confirmEmail').innerText = email;
+          statusBox.classList.remove('hidden');
+          submitBtn.classList.add('hidden');
+        } else {
+          alert('Submission failed. Please call 0448 917 087 directly.');
+          submitBtn.disabled = false;
+          submitBtn.innerText = 'Send Instant Quote Request';
+        }
+      } catch (err) {
+        alert('An error occurred. Please call 0448 917 087 to submit your quote directly.');
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Send Instant Quote Request';
+      }
+    }
+
+    function resetCalculator() {
+      document.getElementById('quoteForm').reset();
+      calculateTotal();
+      document.getElementById('statusBox').classList.add('hidden');
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.classList.remove('hidden');
+      submitBtn.disabled = false;
+      submitBtn.innerText = 'Send Instant Quote Request';
+    }
+
+    calculateTotal();
+  </script>
 </body>
 </html>

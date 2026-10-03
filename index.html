@@ -42,8 +42,9 @@
           </div>
           <div class="rule"></div>
 
-          <form id="quoteForm" onsubmit="handleWeb3Submit(event)">
-            <input type="hidden" name="access_key" value="3c3e8061-0a6d-4ee8-9f1e-f3a3d2482fa8">
+          <form id="quoteForm" onsubmit="handleQuoteSubmit(event)">
+            <!-- WEB3FORMS CONFIGURATION -->
+            <input type="hidden" name="access_key" value="197459b2-5d3c-4fb0-997a-0d54102d7a5e">
             <input type="hidden" name="subject" value="New Pulse Test & Tag Quote Request">
             <input type="hidden" name="from_name" value="Pulse Test & Tag Perth Website">
             <input type="hidden" name="to_email" value="mak.p@pulsetestandtag.com.au">
@@ -57,19 +58,19 @@
               <label class="quantity-field">
                 <span class="field-title">Single Phase Test &amp; Tag</span>
                 <span class="field-help">First 10 tags $100, then $4.95 each</span>
-                <input type="number" min="0" step="1" value="0" name="singlePhase" id="singlePhase" inputmode="numeric" oninput="updateCalculations()" />
+                <input type="number" min="0" step="1" value="0" name="singlePhase" id="singlePhase" inputmode="numeric" />
               </label>
               <label class="quantity-field">
                 <span class="field-title">3 Phase Test &amp; Tag <em>($15.95 each)</em></span>
-                <input type="number" min="0" step="1" value="0" name="threePhase" id="threePhase" inputmode="numeric" oninput="updateCalculations()" />
+                <input type="number" min="0" step="1" value="0" name="threePhase" id="threePhase" inputmode="numeric" />
               </label>
               <label class="quantity-field">
                 <span class="field-title">Microwave Radiation Test <em>($18.95 each)</em></span>
-                <input type="number" min="0" step="1" value="0" name="microwave" id="microwave" inputmode="numeric" oninput="updateCalculations()" />
+                <input type="number" min="0" step="1" value="0" name="microwave" id="microwave" inputmode="numeric" />
               </label>
               <label class="quantity-field">
                 <span class="field-title">Fire Extinguisher Test <em>($18.95 each)</em></span>
-                <input type="number" min="0" step="1" value="0" name="fire" id="fire" inputmode="numeric" oninput="updateCalculations()" />
+                <input type="number" min="0" step="1" value="0" name="fire" id="fire" inputmode="numeric" />
               </label>
             </div>
 
@@ -158,28 +159,7 @@
   <script>
     document.getElementById('year').innerText = new Date().getFullYear();
 
-    function updateCalculations() {
-      const sp = parseInt(document.getElementById('singlePhase').value) || 0;
-      const tp = parseInt(document.getElementById('threePhase').value) || 0;
-      const mw = parseInt(document.getElementById('microwave').value) || 0;
-      const fe = parseInt(document.getElementById('fire').value) || 0;
-
-      let subtotal = 0;
-      if (sp > 0) {
-        subtotal += (sp <= 10) ? 100 : 100 + ((sp - 10) * 4.95);
-      }
-      subtotal += (tp * 15.95) + (mw * 18.95) + (fe * 18.95);
-
-      const gst = subtotal * 0.10;
-      const totalInc = subtotal + gst;
-
-      document.getElementById('total').innerText = '$' + subtotal.toFixed(2);
-      document.getElementById('quoteTotal').value = '$' + subtotal.toFixed(2);
-      document.getElementById('quoteGst').value = '$' + gst.toFixed(2);
-      document.getElementById('quoteTotalInc').value = '$' + totalInc.toFixed(2);
-    }
-
-    async function handleWeb3Submit(e) {
+    async function handleQuoteSubmit(e) {
       e.preventDefault();
       const sendBtn = document.getElementById('sendBtn');
       sendBtn.disabled = true;

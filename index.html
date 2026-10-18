@@ -1,6 +1,10 @@
 <!DOCTYPE html>
-<html lang="en-AU" class="scroll-smooth">
+<html lang="en-AU">
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse Test and Tag | Workplace Electrical Safety & Compliance Services</title>
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18512535890"></script>
@@ -13,366 +17,196 @@
       gtag('config', 'AW-18512535890');
     </script>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulse Test & Tag | Professional Electrical Safety & Compliance Services</title>
-    <meta name="description" content="Certified AS/NZS 3760:2022 electrical test and tagging services in Perth and WA. Portable appliance testing, RCD safety switch testing, and digital logbooks.">
-
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts (Inter) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        pulseBlue: '#00AEEF',
-                        pulseBlueDark: '#0083B3',
-                        pulseCharcoal: '#1e293b',
-                        pulseGray: '#333333',
-                        pulseAccent: '#10b981'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        brand: {
+                            cyan: '#00AEEF',
+                            blue: '#0284C7',
+                            dark: '#333333',
+                            gray: '#F4F6F8'
+                        }
                     }
                 }
             }
         }
     </script>
-    <style>
-        /* Fallback styling for image error states */
-        .logo-fallback {
-            display: none;
-        }
-        img:failed + .logo-fallback {
-            display: flex;
-        }
-    </style>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased font-sans flex flex-col min-h-screen">
+<body class="bg-slate-50 text-gray-800 font-sans leading-relaxed flex flex-col min-h-screen">
 
-    <!-- Top Contact Bar -->
-    <div class="bg-slate-900 text-slate-300 text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-            <div class="flex items-center space-x-4">
-                <a href="tel:1300000000" class="hover:text-pulseBlue transition flex items-center gap-1.5">
-                    <i class="fa-solid fa-phone text-pulseBlue"></i>
-                    <span>1300 PULSE TAG</span>
-                </a>
-                <a href="mailto:info@pulsetesttag.com.au" class="hidden sm:flex hover:text-pulseBlue transition items-center gap-1.5">
-                    <i class="fa-solid fa-envelope text-pulseBlue"></i>
-                    <span>info@pulsetesttag.com.au</span>
-                </a>
+    <!-- TOP BAR -->
+    <div class="bg-slate-900 text-white text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-brand-cyan"></i> AS/NZS 3760:2022 Compliant</span>
+                <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-clock text-brand-cyan"></i> Mon-Fri: 7:00 AM - 5:00 PM</span>
             </div>
             <div class="flex items-center space-x-4">
-                <span class="flex items-center gap-1.5 text-emerald-400">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Perth &amp; WA Serviced</span>
-                </span>
-                <a href="#quote" class="bg-pulseBlue hover:bg-pulseBlueDark text-white px-3 py-1 rounded-full text-xs font-semibold transition shadow-sm">
-                    Quick Quote
-                </a>
+                <a href="mailto:mak.p@pulsetestandtag.com.au" class="hover:text-brand-cyan transition-colors"><i class="fa-solid fa-envelope mr-1 text-brand-cyan"></i> mak.p@pulsetestandtag.com.au</a>
             </div>
         </div>
     </div>
 
-    <!-- Main Navigation Header -->
+    <!-- MAIN HEADER -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo Area -->
-                <a href="#" class="flex items-center group py-2">
-                    <img src="logo-1.png" 
-                         alt="Pulse Test and Tag" 
-                         class="h-12 w-auto object-contain max-h-14"
-                         onerror="this.onerror=null; this.classList.add('hidden'); document.getElementById('logo-text-fallback').classList.remove('hidden');">
-                    <!-- Fallback logo if logo-1.png is missing or loading in local dev -->
-                    <div id="logo-text-fallback" class="hidden items-center space-x-2">
-                        <div class="w-10 h-10 rounded-full bg-pulseBlue flex items-center justify-center text-white font-bold text-xl shadow">
-                            <i class="fa-solid fa-plug"></i>
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="text-xl font-black tracking-tight text-slate-800 leading-none">PULSE</span>
-                            <span class="text-xs font-medium tracking-widest text-slate-500">TEST AND TAG</span>
-                        </div>
-                    </div>
+                <!-- LOGO -->
+                <a href="#" class="flex items-center">
+                    <img src="logo-1.png" alt="Pulse Test and Tag Logo" class="h-12 w-auto object-contain">
                 </a>
 
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex space-x-8 text-sm font-medium">
-                    <a href="#services" class="text-slate-600 hover:text-pulseBlue transition py-2">Services</a>
-                    <a href="#compliance" class="text-slate-600 hover:text-pulseBlue transition py-2">AS/NZS Standards</a>
-                    <a href="#calculator" class="text-slate-600 hover:text-pulseBlue transition py-2">Pricing Estimator</a>
-                    <a href="#quote" class="text-slate-600 hover:text-pulseBlue transition py-2">Book Inspection</a>
-                    <a href="#contact" class="text-slate-600 hover:text-pulseBlue transition py-2">Contact</a>
+                <!-- DESKTOP NAVIGATION -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-slate-700">
+                    <a href="#services" class="hover:text-brand-cyan transition-colors">Services</a>
+                    <a href="#compliance" class="hover:text-brand-cyan transition-colors">Standards</a>
+                    <a href="#calculator" class="hover:text-brand-cyan transition-colors">Pricing Calculator</a>
+                    <a href="#contact" class="hover:text-brand-cyan transition-colors">Contact</a>
                 </nav>
 
-                <!-- CTA Button Desktop -->
-                <div class="hidden md:flex items-center">
-                    <a href="#quote" class="bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm px-5 py-2.5 rounded-lg shadow transition duration-200 flex items-center gap-2">
-                        <i class="fa-solid fa-clipboard-check text-pulseBlue"></i>
-                        <span>Request Inspection</span>
+                <!-- CALL TO ACTION -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#contact" class="bg-brand-cyan hover:bg-sky-500 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md transition-all duration-200 text-sm">
+                        Get Free Quote
                     </a>
                 </div>
 
-                <!-- Mobile Hamburger Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" type="button" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2 rounded-lg border border-slate-200" aria-label="Toggle Menu">
-                        <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+                <!-- MOBILE HAMBURGER BUTTON -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-700 hover:text-brand-cyan p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
+        <!-- MOBILE MENU DROPDOWN -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
-            <a href="#services" class="block py-2 text-slate-700 hover:text-pulseBlue font-medium border-b border-slate-100">Services</a>
-            <a href="#compliance" class="block py-2 text-slate-700 hover:text-pulseBlue font-medium border-b border-slate-100">AS/NZS Standards</a>
-            <a href="#calculator" class="block py-2 text-slate-700 hover:text-pulseBlue font-medium border-b border-slate-100">Pricing Estimator</a>
-            <a href="#quote" class="block py-2 text-slate-700 hover:text-pulseBlue font-medium border-b border-slate-100">Book Inspection</a>
-            <a href="#contact" class="block py-2 text-slate-700 hover:text-pulseBlue font-medium border-b border-slate-100">Contact</a>
-            <a href="#quote" class="block w-full text-center bg-pulseBlue hover:bg-pulseBlueDark text-white font-semibold py-3 rounded-lg shadow mt-4">
-                Get Instant Quote
+            <a href="#services" class="block text-slate-700 hover:text-brand-cyan font-medium py-2 border-b border-slate-100">Services</a>
+            <a href="#compliance" class="block text-slate-700 hover:text-brand-cyan font-medium py-2 border-b border-slate-100">Standards</a>
+            <a href="#calculator" class="block text-slate-700 hover:text-brand-cyan font-medium py-2 border-b border-slate-100">Pricing Calculator</a>
+            <a href="#contact" class="block text-slate-700 hover:text-brand-cyan font-medium py-2 border-b border-slate-100">Contact</a>
+            <a href="#contact" class="block w-full text-center bg-brand-cyan text-white font-semibold py-2.5 rounded-lg mt-4">
+                Get Free Quote
             </a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16 lg:py-24 overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#00AEEF_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 me-2 py-1 rounded-full bg-pulseBlue/20 text-pulseBlue border border-pulseBlue/30 text-xs font-semibold tracking-wide uppercase">
-                        <i class="fa-solid fa-shield-halved"></i> AS/NZS 3760:2022 Certified
-                    </div>
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                        Keep Your Workplace Safe &amp; <span class="text-pulseBlue">Fully Compliant</span>
-                    </h1>
-                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Fast, reliable, and certified electrical test and tagging services across Perth. Minimise risk, protect your staff, and maintain mandatory workplace health & safety compliance.
-                    </p>
-
-                    <!-- Trust Badges -->
-                    <div class="pt-2 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left max-w-xl mx-auto lg:mx-0">
-                        <div class="bg-slate-800/80 p-3 rounded-lg border border-slate-700/60 flex items-center space-x-3">
-                            <i class="fa-solid fa-certificate text-pulseBlue text-xl"></i>
-                            <span class="text-xs font-semibold text-slate-200">Certified Technicians</span>
-                        </div>
-                        <div class="bg-slate-800/80 p-3 rounded-lg border border-slate-700/60 flex items-center space-x-3">
-                            <i class="fa-solid fa-file-invoice text-emerald-400 text-xl"></i>
-                            <span class="text-xs font-semibold text-slate-200">Detailed Digital Asset Logbooks</span>
-                        </div>
-                        <div class="bg-slate-800/80 p-3 rounded-lg border border-slate-700/60 flex items-center space-x-3">
-                            <i class="fa-solid fa-clock-rotate-left text-pulseBlue text-xl"></i>
-                            <span class="text-xs font-semibold text-slate-200">Re-test Reminders Included</span>
-                        </div>
-                    </div>
-
-                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#quote" class="bg-pulseBlue hover:bg-pulseBlueDark text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-pulseBlue/30 transition text-center flex items-center justify-center gap-2">
-                            <span>Get Free Quote Now</span>
-                            <i class="fa-solid fa-arrow-right text-sm"></i>
-                        </a>
-                        <a href="#calculator" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-semibold px-6 py-4 rounded-xl transition text-center flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-calculator text-pulseBlue"></i>
-                            <span>Price Estimator</span>
-                        </a>
-                    </div>
+    <!-- HERO SECTION -->
+    <section class="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 bg-brand-cyan/20 border border-brand-cyan/40 text-brand-cyan px-3 py-1 rounded-full text-sm font-semibold">
+                    <i class="fa-solid fa-circle-check"></i> Certified Electrical Safety Technicians
                 </div>
-
-                <!-- Hero Visual Box -->
-                <div class="lg:col-span-5">
-                    <div class="bg-slate-800/90 border border-slate-700 p-6 sm:p-8 rounded-2xl shadow-2xl backdrop-blur-sm relative">
-                        <div class="absolute -top-3 -right-3 bg-emerald-500 text-slate-950 font-bold text-xs uppercase px-3 py-1 rounded-full shadow">
-                            PASSED COMPLIANCE
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-3 flex items-center gap-2">
-                            <i class="fa-solid fa-list-check text-pulseBlue"></i> Standard Inspection Covers:
-                        </h3>
-                        <ul class="space-y-3 text-sm text-slate-300">
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
-                                <span><strong>Visual &amp; Mechanical Inspection:</strong> Checking for damaged cords, plugs, and exposed wiring.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
-                                <span><strong>Electrical Testing:</strong> Earth continuity, insulation resistance, and polarity checks.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
-                                <span><strong>Heavy Duty Tagging:</strong> Durable barcode test tags applied to each appliance.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
-                                <span><strong>Comprehensive Audit Report:</strong> PDF asset logbook for your WorkSafe compliance requirements.</span>
-                            </li>
-                        </ul>
-                    </div>
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                    Professional Electrical <span class="text-brand-cyan">Test & Tag Services</span>
+                </h1>
+                <p class="text-slate-300 text-lg">
+                    Ensure full workplace compliance with AS/NZS 3760:2022 standards. Fast, reliable, and non-disruptive testing for businesses, construction sites, and commercial facilities.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <a href="#calculator" class="bg-brand-cyan hover:bg-sky-500 text-white font-bold px-6 py-3.5 rounded-lg text-center shadow-lg transition-all">
+                        Calculate Estimated Cost
+                    </a>
+                    <a href="#contact" class="border border-slate-600 hover:border-slate-400 text-slate-200 font-semibold px-6 py-3.5 rounded-lg text-center transition-all">
+                        Book Technician
+                    </a>
                 </div>
+            </div>
+
+            <div class="bg-slate-800/80 p-8 rounded-2xl border border-slate-700/60 shadow-2xl backdrop-blur-sm">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-shield-cat text-brand-cyan"></i> Compliance Checklist
+                </h3>
+                <ul class="space-y-3.5 text-slate-300 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                        <span>Visual inspection & electrical testing for all portable appliances.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                        <span>Durable, color-coded compliance tagging applied on-site.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                        <span>Detailed digital asset register & compliance logbook provided.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                        <span>RCD / Safety Switch trip time testing & reporting.</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- SERVICES SECTION -->
     <section id="services" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs font-bold text-pulseBlue uppercase tracking-widest mb-2">Our Services</h2>
-                <p class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Complete Electrical Testing &amp; Tagging Solutions</p>
-                <p class="mt-3 text-slate-600">We inspect and test all portable electrical equipment in accordance with Australian Standard AS/NZS 3760:2022.</p>
+                <h2 class="text-3xl font-bold text-slate-900">Our Comprehensive Services</h2>
+                <p class="text-slate-600 mt-2">Tailored testing and tagging solutions designed to keep your workplace compliant and safe.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-pulseBlue/10 text-pulseBlue flex items-center justify-center text-2xl font-bold mb-5">
-                            <i class="fa-solid fa-plug"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Portable Appliance Testing (PAT)</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Inspection and electrical safety testing for power tools, extension leads, computers, kitchen appliances, and office machinery.
-                        </p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-brand-cyan/10 text-brand-cyan rounded-lg flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-plug"></i>
                     </div>
-                    <span class="text-xs font-semibold text-emerald-600 flex items-center gap-1">
-                        <i class="fa-solid fa-check"></i> Heavy-duty tag attached
-                    </span>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Electrical Appliance Testing</h3>
+                    <p class="text-slate-600 text-sm">Thorough testing of portable electrical equipment, power tools, extension cords, and office appliances.</p>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-pulseBlue/10 text-pulseBlue flex items-center justify-center text-2xl font-bold mb-5">
-                            <i class="fa-solid fa-toggle-on"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">RCD Safety Switch Testing</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Push-button and operating time trip tests for portable and fixed Residual Current Devices (RCDs) to ensure instant shut-off protection.
-                        </p>
+                <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-brand-cyan/10 text-brand-cyan rounded-lg flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-toggle-on"></i>
                     </div>
-                    <span class="text-xs font-semibold text-emerald-600 flex items-center gap-1">
-                        <i class="fa-solid fa-check"></i> Trip-time verification
-                    </span>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">RCD / Safety Switch Testing</h3>
+                    <p class="text-slate-600 text-sm">Push button and trip-time testing for fixed and portable Residual Current Devices (RCDs).</p>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-pulseBlue/10 text-pulseBlue flex items-center justify-center text-2xl font-bold mb-5">
-                            <i class="fa-solid fa-bolt"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">3-Phase Equipment Testing</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Specialised inspection and electrical safety testing for 3-phase machinery, industrial leads, and heavy equipment.
-                        </p>
+                <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-brand-cyan/10 text-brand-cyan rounded-lg flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-file-invoice"></i>
                     </div>
-                    <span class="text-xs font-semibold text-emerald-600 flex items-center gap-1">
-                        <i class="fa-solid fa-check"></i> Industrial standard check
-                    </span>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-pulseBlue/10 text-pulseBlue flex items-center justify-center text-2xl font-bold mb-5">
-                            <i class="fa-solid fa-wifi"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Microwave Leakage Testing</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Measuring radiation leakage and power output on workplace microwaves to safeguard employees in lunchrooms and commercial kitchens.
-                        </p>
-                    </div>
-                    <span class="text-xs font-semibold text-emerald-600 flex items-center gap-1">
-                        <i class="fa-solid fa-check"></i> Radiation safety tag
-                    </span>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-pulseBlue/10 text-pulseBlue flex items-center justify-center text-2xl font-bold mb-5">
-                            <i class="fa-solid fa-file-contract"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Digital Asset Register</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Receive a detailed PDF report listing all items, pass/fail status, location, asset numbers, and recommended re-test dates.
-                        </p>
-                    </div>
-                    <span class="text-xs font-semibold text-emerald-600 flex items-center gap-1">
-                        <i class="fa-solid fa-check"></i> Audit-ready records
-                    </span>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-pulseBlue/10 text-pulseBlue flex items-center justify-center text-2xl font-bold mb-5">
-                            <i class="fa-solid fa-bell"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Free Compliance Tracking</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            We track your re-testing schedule and notify you ahead of time so your business never falls out of safety compliance.
-                        </p>
-                    </div>
-                    <span class="text-xs font-semibold text-emerald-600 flex items-center gap-1">
-                        <i class="fa-solid fa-check"></i> Zero downtime hassle
-                    </span>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Digital Compliance Reports</h3>
+                    <p class="text-slate-600 text-sm">Comprehensive digital item registry and safety certificate provided following service completion.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Pricing Calculator -->
-    <section id="calculator" class="py-16 bg-slate-100 border-y border-slate-200">
+    <!-- CALCULATOR SECTION -->
+    <section id="calculator" class="py-16 bg-slate-100">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-xs font-bold text-pulseBlue uppercase tracking-widest mb-2">Transparent Rates</h2>
-                <h3 class="text-3xl font-extrabold text-slate-900">Instant Estimate Calculator</h3>
-                <p class="text-slate-600 mt-2">Adjust the item count below to estimate your electrical test and tag service cost.</p>
-            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold text-slate-900 mb-2 text-center">Estimate Your Cost</h2>
+                <p class="text-slate-600 text-center mb-8 text-sm">Adjust the slider based on the number of electrical items at your location.</p>
 
-            <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-10 border border-slate-200">
                 <div class="space-y-6">
                     <div>
                         <div class="flex justify-between items-center mb-2">
-                            <label for="itemRange" class="font-bold text-slate-800 text-lg">Estimated Number of Items/Tags:</label>
-                            <span id="itemDisplay" class="text-2xl font-extrabold text-pulseBlue">50 items</span>
+                            <label for="item-range" class="font-semibold text-slate-700">Number of Items to Test:</label>
+                            <span id="item-count" class="text-2xl font-bold text-brand-cyan">50 Items</span>
                         </div>
-                        <input type="range" id="itemRange" min="10" max="500" step="5" value="50" 
-                               class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-pulseBlue">
-                        <div class="flex justify-between text-xs text-slate-400 mt-1">
-                            <span>10 items</span>
-                            <span>150 items</span>
-                            <span>300 items</span>
-                            <span>500+ items</span>
+                        <input id="item-range" type="range" min="10" max="500" step="10" value="50" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-cyan">
+                    </div>
+
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div>
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Estimated Price</span>
+                            <span id="estimated-price" class="text-3xl font-extrabold text-slate-900">$180.00</span>
+                            <span class="text-xs text-slate-500 block mt-1">*Excluding GST. Final quote verified on-site.</span>
                         </div>
-                    </div>
-
-                    <!-- Price Output Box -->
-                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 text-center">
-                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Estimated Total (ex. GST)</span>
-                        <div class="text-4xl sm:text-5xl font-black text-slate-900 my-2" id="estimatedPrice">$225.00</div>
-                        <div class="text-xs text-slate-500" id="perItemRate">Rate: ~$4.50 per item (Callout minimums apply)</div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-center text-xs text-slate-600 border-t border-slate-100 pt-4">
-                        <div class="p-2 bg-slate-50 rounded"><i class="fa-solid fa-check text-emerald-500 mr-1"></i> No Hidden Callout Fees</div>
-                        <div class="p-2 bg-slate-50 rounded"><i class="fa-solid fa-check text-emerald-500 mr-1"></i> Digital Logbook Included</div>
-                        <div class="p-2 bg-slate-50 rounded"><i class="fa-solid fa-check text-emerald-500 mr-1"></i> Bulk Volume Discounts Available</div>
-                    </div>
-
-                    <div class="text-center pt-2">
-                        <a href="#quote" onclick="prefillEstimate()" class="inline-block bg-pulseBlue hover:bg-pulseBlueDark text-white font-bold px-8 py-3 rounded-lg shadow transition">
-                            Book Inspection with This Estimate
+                        <a href="#contact" class="bg-brand-cyan hover:bg-sky-500 text-white font-semibold px-6 py-3 rounded-lg text-sm transition-all w-full sm:w-auto text-center">
+                            Book This Quote
                         </a>
                     </div>
                 </div>
@@ -380,309 +214,96 @@
         </div>
     </section>
 
-    <!-- AS/NZS 3760:2022 Compliance Interval Table -->
-    <section id="compliance" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs font-bold text-pulseBlue uppercase tracking-widest mb-2">Regulatory Standard</h2>
-                <h3 class="text-3xl font-extrabold text-slate-900">AS/NZS 3760:2022 Re-Test Intervals</h3>
-                <p class="text-slate-600 mt-2">WorkSafe requirements dictate testing intervals based on workplace operating environments.</p>
+    <!-- CONTACT FORM SECTION -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-slate-900">Book Service or Request Quote</h2>
+                <p class="text-slate-600 mt-2">Fill out the form below and our team will get in touch promptly.</p>
             </div>
 
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse bg-white rounded-xl shadow border border-slate-200 overflow-hidden">
-                    <thead class="bg-slate-900 text-white text-sm">
-                        <tr>
-                            <th class="p-4">Industry / Operating Environment</th>
-                            <th class="p-4">Equipment Testing</th>
-                            <th class="p-4">Push-Button RCD Check</th>
-                            <th class="p-4">Operating Time RCD Test</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200 text-sm text-slate-700">
-                        <tr class="hover:bg-slate-50">
-                            <td class="p-4 font-semibold text-slate-900">Building, Construction &amp; Demolition</td>
-                            <td class="p-4"><span class="bg-red-100 text-red-800 text-xs font-bold px-2.5 py-1 rounded">3 Months</span></td>
-                            <td class="p-4">Daily / Before use</td>
-                            <td class="p-4">3 Months</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50">
-                            <td class="p-4 font-semibold text-slate-900">Factories, Workshops &amp; Manufacturing</td>
-                            <td class="p-4"><span class="bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded">6 Months</span></td>
-                            <td class="p-4">6 Months</td>
-                            <td class="p-4">12 Months</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50">
-                            <td class="p-4 font-semibold text-slate-900">Offices, Schools, Hospitality &amp; Retail</td>
-                            <td class="p-4"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded">12 Months / 2 Years</span></td>
-                            <td class="p-4">6 Months</td>
-                            <td class="p-4">2 Years</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50">
-                            <td class="p-4 font-semibold text-slate-900">Hire Equipment</td>
-                            <td class="p-4"><span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-1 rounded">Prior to hire / 3 Months</span></td>
-                            <td class="p-4">Prior to hire</td>
-                            <td class="p-4">12 Months</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
+            <!-- Web3Forms Integration -->
+            <form id="booking-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6 bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                <!-- Direct Access Key -->
+                <input type="hidden" name="access_key" value="197459b2-5d3c-4fb0-997a-0d54102d7a5e">
+                <input type="hidden" name="subject" value="New Test & Tag Booking Request">
+                <input type="hidden" name="from_name" value="Pulse Test & Tag Website">
 
-    <!-- Booking & Quote Form Section -->
-    <section id="quote" class="py-16 bg-slate-900 text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-xs font-bold text-pulseBlue uppercase tracking-widest mb-2">Book / Request Quote</h2>
-                <h3 class="text-3xl font-extrabold">Schedule Your Safety Inspection</h3>
-                <p class="text-slate-400 mt-2">Fill out the form below and our team will get back to you within 2 business hours.</p>
-            </div>
-
-            <form id="quoteForm" onsubmit="handleFormSubmit(event)" class="bg-slate-800 p-6 sm:p-10 rounded-2xl border border-slate-700 shadow-2xl space-y-6">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="grid sm:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Full Name *</label>
-                        <input type="text" required placeholder="John Doe" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-pulseBlue">
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Full Name *</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-cyan">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Company / Business Name</label>
-                        <input type="text" placeholder="Acme Corp" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-pulseBlue">
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Email Address *</label>
+                        <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-cyan">
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="grid sm:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Phone Number *</label>
-                        <input type="tel" required placeholder="0400 000 000" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-pulseBlue">
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Phone Number *</label>
+                        <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-cyan">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Email Address *</label>
-                        <input type="email" required placeholder="john@example.com.au" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-pulseBlue">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Service Required</label>
-                        <select class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-pulseBlue">
-                            <option>Standard Appliance Test &amp; Tag</option>
-                            <option>RCD Safety Switch Testing</option>
-                            <option>3-Phase Equipment Testing</option>
-                            <option>Full Workplace Safety Audit</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Estimated Item Count</label>
-                        <input type="text" id="formItemEstimate" placeholder="e.g. 50 items" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-pulseBlue">
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Estimated Item Count</label>
+                        <input type="text" name="items" id="form-items" value="50 Items" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-cyan">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Site Location / Additional Notes</label>
-                    <textarea rows="3" placeholder="Provide site location (Subrub) or details about access times..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-pulseBlue"></textarea>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Service Location / Address</label>
+                    <input type="text" name="location" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-cyan">
                 </div>
 
-                <button type="submit" class="w-full bg-pulseBlue hover:bg-pulseBlueDark text-white font-extrabold py-4 rounded-xl shadow-lg transition text-base">
-                    Submit Request for Quote
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Additional Notes or Preferred Date</label>
+                    <textarea name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-cyan"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-brand-cyan hover:bg-sky-500 text-white font-bold py-4 rounded-lg shadow-md transition-all text-base">
+                    Send Request
                 </button>
             </form>
         </div>
     </section>
 
-    <!-- Contact & Map Section -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl">
-                    <div class="w-10 h-10 rounded-lg bg-pulseBlue/10 text-pulseBlue flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 text-lg mb-1">Phone Enquiries</h4>
-                    <p class="text-sm text-slate-600 mb-3">Speak directly with our technical team.</p>
-                    <a href="tel:1300000000" class="text-pulseBlue font-bold hover:underline">1300 PULSE TAG</a>
-                </div>
-
-                <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl">
-                    <div class="w-10 h-10 rounded-lg bg-pulseBlue/10 text-pulseBlue flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-envelope"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 text-lg mb-1">Email Support</h4>
-                    <p class="text-sm text-slate-600 mb-3">Send us site plans or compliance questions.</p>
-                    <a href="mailto:info@pulsetesttag.com.au" class="text-pulseBlue font-bold hover:underline">info@pulsetesttag.com.au</a>
-                </div>
-
-                <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl">
-                    <div class="w-10 h-10 rounded-lg bg-pulseBlue/10 text-pulseBlue flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-clock"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 text-lg mb-1">Operating Hours</h4>
-                    <p class="text-sm text-slate-600 mb-1">Mon - Fri: 7:00 AM - 5:00 PM</p>
-                    <p class="text-xs text-slate-500">After-hours &amp; weekend testing available by appointment.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <!-- Col 1: Brand -->
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-2">
-                        <img src="logo-1.png" alt="Pulse Test and Tag" class="h-10 w-auto filter brightness-200 contrast-125" onerror="this.style.display='none'; document.getElementById('footer-fallback').classList.remove('hidden');">
-                        <div id="footer-fallback" class="hidden text-white font-extrabold text-xl">PULSE <span class="text-pulseBlue">TEST &amp; TAG</span></div>
-                    </div>
-                    <p class="text-xs leading-relaxed text-slate-400">
-                        Professional electrical testing, tagging, and safety compliance for commercial, industrial, and construction workplaces.
-                    </p>
-                </div>
-
-                <!-- Col 2: Quick Links -->
-                <div>
-                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-4">Services</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#services" class="hover:text-pulseBlue transition">Appliance Testing</a></li>
-                        <li><a href="#services" class="hover:text-pulseBlue transition">RCD Safety Switches</a></li>
-                        <li><a href="#services" class="hover:text-pulseBlue transition">3-Phase Testing</a></li>
-                        <li><a href="#services" class="hover:text-pulseBlue transition">Microwave Testing</a></li>
-                    </ul>
-                </div>
-
-                <!-- Col 3: Standards -->
-                <div>
-                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-4">Compliance</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#compliance" class="hover:text-pulseBlue transition">AS/NZS 3760:2022</a></li>
-                        <li><a href="#compliance" class="hover:text-pulseBlue transition">WorkSafe WA Requirements</a></li>
-                        <li><a href="#compliance" class="hover:text-pulseBlue transition">Digital Asset Logbooks</a></li>
-                    </ul>
-                </div>
-
-                <!-- Col 4: Legal -->
-                <div>
-                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-4">Coverage</h4>
-                    <p class="text-xs leading-relaxed text-slate-400 mb-2">
-                        Servicing all Perth Metropolitan suburbs and regional Western Australia.
-                    </p>
-                    <span class="inline-block bg-emerald-950 text-emerald-400 text-xs px-2.5 py-1 rounded border border-emerald-800">
-                        Fully Insured &amp; Qualified
-                    </span>
-                </div>
-            </div>
-
-            <div class="border-t border-slate-900 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
-                <p>&copy; <span id="currentYear"></span> Pulse Test &amp; Tag. All rights reserved.</p>
-                <p>Designed for compliance and electrical safety excellence.</p>
-            </div>
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm space-y-2">
+            <p>&copy; 2026 Pulse Test and Tag. All rights reserved.</p>
+            <p class="text-xs text-slate-500">Complying with AS/NZS 3760:2022 Electrical Safety Standards.</p>
         </div>
     </footer>
 
-    <!-- Form Confirmation Modal -->
-    <div id="successModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl p-8 max-w-md w-full text-center shadow-2xl">
-            <div class="w-16 h-16 bg-emerald-100 text-emerald-500 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
-                <i class="fa-solid fa-circle-check"></i>
-            </div>
-            <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Request Received!</h3>
-            <p class="text-slate-600 text-sm mb-6">Thank you for reaching out. One of our certified technicians will contact you shortly to confirm your quote and booking details.</p>
-            <button onclick="closeModal()" class="bg-pulseBlue hover:bg-pulseBlueDark text-white font-bold px-6 py-2.5 rounded-lg w-full transition">
-                Close
-            </button>
-        </div>
-    </div>
-
-    <!-- JavaScript Features -->
+    <!-- INTERACTIVE SCRIPTS -->
     <script>
-        // Set dynamic year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
 
-        mobileMenuBtn.addEventListener('click', () => {
+        menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            } else {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-xmark');
-            }
         });
 
-        // Close mobile menu when clicking menu links
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            });
+        // Price calculator logic
+        const itemRange = document.getElementById('item-range');
+        const itemCount = document.getElementById('item-count');
+        const estimatedPrice = document.getElementById('estimated-price');
+        const formItems = document.getElementById('form-items');
+
+        itemRange.addEventListener('input', (e) => {
+            const count = parseInt(e.target.value);
+            itemCount.textContent = `${count} Items`;
+            formItems.value = `${count} Items`;
+
+            let baseRate = 3.50;
+            if (count > 100) baseRate = 3.00;
+            if (count > 250) baseRate = 2.50;
+
+            const total = Math.max(120, count * baseRate);
+            estimatedPrice.textContent = `$${total.toFixed(2)}`;
         });
-
-        // Pricing Estimator Calculator Logic
-        const itemRange = document.getElementById('itemRange');
-        const itemDisplay = document.getElementById('itemDisplay');
-        const estimatedPrice = document.getElementById('estimatedPrice');
-        const perItemRate = document.getElementById('perItemRate');
-
-        function updatePrice() {
-            const items = parseInt(itemRange.value);
-            let rate = 4.50;
-
-            if (items < 30) {
-                rate = 6.50;
-            } else if (items < 70) {
-                rate = 4.50;
-            } else if (items < 150) {
-                rate = 3.80;
-            } else if (items < 300) {
-                rate = 3.20;
-            } else {
-                rate = 2.80;
-            }
-
-            let total = items * rate;
-            // Minimum callout fee threshold
-            if (total < 120) {
-                total = 120;
-            }
-
-            itemDisplay.textContent = items + " items";
-            estimatedPrice.textContent = "$" + total.toFixed(2);
-            perItemRate.textContent = "Rate: ~$" + rate.toFixed(2) + " per item (min callout applies)";
-        }
-
-        itemRange.addEventListener('input', updatePrice);
-        updatePrice();
-
-        function prefillEstimate() {
-            const items = itemRange.value;
-            document.getElementById('formItemEstimate').value = items + " items (~" + estimatedPrice.textContent + ")";
-        }
-
-        // Form Submit Handler
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            
-            // Trigger Google gtag event if required
-            if (typeof gtag === 'function') {
-                gtag('event', 'generate_lead', {
-                    'event_category': 'Quote Form',
-                    'event_label': 'Inspection Request'
-                });
-            }
-
-            document.getElementById('successModal').classList.remove('hidden');
-            event.target.reset();
-        }
-
-        function closeModal() {
-            document.getElementById('successModal').classList.add('hidden');
-        }
     </script>
 </body>
 </html>

@@ -1,309 +1,464 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-AU">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulse Test and Tag | Workplace Electrical Safety & Compliance Services</title>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18512535890"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18512535890"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-      gtag('config', 'G-XXXXXXXXXX');
-      gtag('config', 'AW-18512535890');
-    </script>
+    gtag('config', 'AW-18512535890');
+  </script>
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            cyan: '#00AEEF',
-                            blue: '#0284C7',
-                            dark: '#333333',
-                            gray: '#F4F6F8'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Pulse Test and Tag Perth — instant test and tag quotes for electrical safety services." />
+  <title>Pulse Test and Tag Perth | Instant Quote</title>
+  <link rel="icon" href="logo-1.png" />
+  <style>
+    /* Reset & Base Styles */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: #0b132b;
+      color: #f8fafc;
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* Header & Nav */
+    .site-header {
+      background: rgba(11, 19, 43, 0.95);
+      border-bottom: 1px solid #1e293b;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+    .nav-shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand { display: flex; align-items: center; gap: 0.75rem; }
+    .brand-logo { height: 42px; width: auto; object-fit: contain; }
+    .brand-perth { background: #1e293b; color: #10b981; font-size: 0.7rem; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+    .desktop-nav { display: flex; gap: 1.5rem; font-weight: 500; font-size: 0.95rem; }
+    .desktop-nav a:hover { color: #10b981; }
+    .header-call { background: #10b981; color: #0b132b; font-weight: 700; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.2s; }
+    .header-call:hover { background: #34d399; }
+
+    /* Quote Hero Layout */
+    .quote-hero { padding: 3rem 1.5rem; }
+    .quote-shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .quote-shell { grid-template-columns: 1fr; }
+    }
+
+    /* Intro & Form */
+    .title-line { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .sliders { font-size: 2rem; color: #10b981; }
+    .title-line h1 { font-size: 2rem; font-weight: 800; }
+    .title-line p { color: #94a3b8; font-size: 0.95rem; }
+    .rule { height: 1px; background: #1e293b; margin-bottom: 2rem; }
+
+    .quantity-list { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem; }
+    .quantity-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      background: #1c2541;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      border: 1px solid #3a506b;
+    }
+    .field-title { font-weight: 600; font-size: 1rem; }
+    .field-title em { font-style: normal; color: #10b981; font-size: 0.85rem; font-weight: 400; margin-left: 0.5rem; }
+    .field-help { font-size: 0.8rem; color: #94a3b8; }
+    .quantity-field input {
+      background: #0b132b;
+      border: 1px solid #3a506b;
+      color: #fff;
+      padding: 0.6rem 0.8rem;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      width: 100%;
+      outline: none;
+      margin-top: 0.25rem;
+    }
+    .quantity-field input:focus { border-color: #10b981; }
+
+    /* Client Form */
+    .client-box { background: #1c2541; padding: 1.5rem; border-radius: 8px; border: 1px solid #3a506b; margin-bottom: 1.5rem; }
+    .client-heading { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; border-bottom: 1px solid #3a506b; padding-bottom: 0.5rem; }
+    .client-heading span { font-weight: 700; letter-spacing: 0.5px; }
+    .client-heading small { color: #94a3b8; }
+    .client-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 600px) { .client-grid { grid-template-columns: 1fr; } }
+    .client-grid label { display: flex; flex-direction: column; font-size: 0.85rem; color: #cbd5e1; gap: 0.3rem; }
+    .client-grid label.full { grid-column: 1 / -1; }
+    .client-grid input, .client-grid textarea {
+      background: #0b132b;
+      border: 1px solid #3a506b;
+      color: #fff;
+      padding: 0.6rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+    .client-grid input:focus, .client-grid textarea:focus { border-color: #10b981; outline: none; }
+
+    .send-btn {
+      width: 100%;
+      background: #10b981;
+      color: #0b132b;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 0.9rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .send-btn:hover { background: #34d399; }
+    .privacy-note { font-size: 0.8rem; color: #94a3b8; text-align: center; margin-top: 0.75rem; }
+    .error-msg { color: #ef4444; font-size: 0.85rem; margin-bottom: 0.75rem; display: none; font-weight: 600; }
+
+    /* Estimate Card Sidebar */
+    .estimate-card {
+      background: #1c2541;
+      border: 1px solid #3a506b;
+      border-radius: 10px;
+      padding: 1.5rem;
+      position: sticky;
+      top: 90px;
+    }
+    .estimate-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    .estimate-title { display: flex; align-items: center; gap: 0.5rem; }
+    .estimate-title h2 { font-size: 1.2rem; font-weight: 700; }
+    .live-dot { background: rgba(16, 185, 129, 0.2); color: #10b981; font-size: 0.7rem; font-weight: 800; padding: 2px 8px; border-radius: 12px; }
+    .estimate-rule { height: 1px; background: #3a506b; margin-bottom: 1rem; }
+
+    /* Side-By-Side Totals Grid */
+    .estimate-totals-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 1rem 0;
+      border-bottom: 1px solid #3a506b;
+    }
+    .total-col { display: flex; flex-direction: column; }
+    .total-col span { font-size: 0.75rem; color: #94a3b8; margin-bottom: 2px; }
+    .total-col strong { font-size: 1.35rem; font-weight: 800; color: #ffffff; }
+    .total-col.highlight strong { color: #10b981; }
+
+    .estimate-items { padding: 1.25rem 0; min-height: 100px; }
+    .estimate-row { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.5rem; color: #cbd5e1; }
+    .empty-state { text-align: center; color: #94a3b8; padding: 1rem 0; }
+    .check-circle { display: inline-block; background: rgba(16, 185, 129, 0.2); color: #10b981; border-radius: 50%; width: 28px; height: 28px; line-height: 28px; margin-bottom: 0.5rem; }
+    .estimate-foot { font-size: 0.75rem; color: #64748b; border-top: 1px solid #3a506b; padding-top: 0.75rem; margin-top: 0.5rem; }
+
+    /* Services Section */
+    .service-band { background: #0b132b; border-top: 1px solid #1e293b; padding: 4rem 1.5rem; }
+    .services-shell { max-width: 1200px; margin: 0 auto; }
+    .services-heading { margin-bottom: 2rem; }
+    .services-heading span { color: #10b981; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; }
+    .services-heading h2 { font-size: 1.75rem; margin: 0.25rem 0; }
+    .services-heading p { color: #94a3b8; }
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .service-grid article { background: #1c2541; border: 1px solid #3a506b; padding: 1.25rem; border-radius: 8px; display: flex; align-items: center; gap: 1rem; }
+    .service-icon { font-size: 1.5rem; background: #0b132b; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 6px; }
+    .service-grid h3 { font-size: 1rem; }
+    .service-grid p { font-size: 0.8rem; color: #94a3b8; }
+    .service-grid b { margin-left: auto; color: #10b981; }
+
+    /* About Section */
+    .about-section { padding: 4rem 1.5rem; background: #1c2541; border-top: 1px solid #3a506b; }
+    .about-shell { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 350px; gap: 3rem; }
+    @media (max-width: 800px) { .about-shell { grid-template-columns: 1fr; } }
+    .eyebrow { color: #10b981; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; }
+    .about-shell h2 { font-size: 1.75rem; margin: 0.5rem 0 1rem 0; }
+    .about-shell p { color: #cbd5e1; margin-bottom: 1.5rem; }
+    .trust-pills { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .trust-pills span { background: #0b132b; border: 1px solid #3a506b; color: #10b981; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; }
+
+    .contact-panel { background: #0b132b; border: 1px solid #3a506b; padding: 1.5rem; border-radius: 8px; display: flex; flex-direction: column; gap: 0.5rem; }
+    .contact-panel h3 { font-size: 1.2rem; }
+    .contact-panel span { font-size: 0.75rem; color: #10b981; font-weight: 700; }
+    .contact-panel a { color: #cbd5e1; font-size: 0.95rem; }
+    .contact-panel a:hover { color: #10b981; }
+
+    /* Footer */
+    footer { background: #070a14; border-top: 1px solid #1e293b; padding: 1.5rem; text-align: center; color: #64748b; font-size: 0.85rem; display: flex; justify-content: space-between; max-width: 100%; margin: 0 auto; }
+    @media (max-width: 600px) { footer { flex-direction: column; gap: 0.5rem; } }
+  </style>
 </head>
-<body class="bg-slate-50 text-gray-800 font-sans leading-relaxed flex flex-col min-h-screen">
+<body>
 
-    <!-- TOP BAR -->
-    <div class="bg-slate-900 text-white text-xs py-2 px-4 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div class="flex items-center space-x-6">
-                <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-brand-cyan"></i> AS/NZS 3760:2022 Compliant</span>
-                <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-clock text-brand-cyan"></i> Mon-Fri: 7:00 AM - 5:00 PM</span>
-            </div>
-            <div class="flex items-center space-x-4">
-                <a href="mailto:mak.p@pulsetestandtag.com.au" class="hover:text-brand-cyan transition-colors"><i class="fa-solid fa-envelope mr-1 text-brand-cyan"></i> mak.p@pulsetestandtag.com.au</a>
-            </div>
-        </div>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="Pulse Test and Tag Perth home">
+        <img src="logo-1.png" alt="Pulse Test and Tag Logo" class="brand-logo" />
+        <span class="brand-perth">PERTH</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#quote">Instant Quote</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="header-call" href="tel:0448917087">0448 917 087</a>
     </div>
+  </header>
 
-    <!-- MAIN HEADER -->
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- LOGO -->
-                <a href="#" class="flex items-center">
-                    <img src="logo-1.png" alt="Pulse Test and Tag Logo" class="h-12 w-auto object-contain">
-                </a>
-
-                <!-- DESKTOP NAVIGATION -->
-                <nav class="hidden md:flex items-center space-x-8 font-medium text-slate-700">
-                    <a href="#services" class="hover:text-brand-cyan transition-colors">Services</a>
-                    <a href="#compliance" class="hover:text-brand-cyan transition-colors">Standards</a>
-                    <a href="#calculator" class="hover:text-brand-cyan transition-colors">Pricing Calculator</a>
-                    <a href="#contact" class="hover:text-brand-cyan transition-colors">Contact</a>
-                </nav>
-
-                <!-- CALL TO ACTION -->
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="#contact" class="bg-brand-cyan hover:bg-sky-500 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md transition-all duration-200 text-sm">
-                        Get Free Quote
-                    </a>
-                </div>
-
-                <!-- MOBILE HAMBURGER BUTTON -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-slate-700 hover:text-brand-cyan p-2 focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
+  <main id="top">
+    <section class="quote-hero" id="quote">
+      <div class="quote-shell">
+        <div class="quote-intro">
+          <div class="title-line">
+            <span class="sliders">☷</span>
+            <div>
+              <h1>Select Quantities</h1>
+              <p>Build your estimate in seconds. Your quote is sent straight to you and copied to Mak.</p>
             </div>
-        </div>
+          </div>
+          <div class="rule"></div>
 
-        <!-- MOBILE MENU DROPDOWN -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
-            <a href="#services" class="block text-slate-700 hover:text-brand-cyan font-medium py-2 border-b border-slate-100">Services</a>
-            <a href="#compliance" class="block text-slate-700 hover:text-brand-cyan font-medium py-2 border-b border-slate-100">Standards</a>
-            <a href="#calculator" class="block text-slate-700 hover:text-brand-cyan font-medium py-2 border-b border-slate-100">Pricing Calculator</a>
-            <a href="#contact" class="block text-slate-700 hover:text-brand-cyan font-medium py-2 border-b border-slate-100">Contact</a>
-            <a href="#contact" class="block w-full text-center bg-brand-cyan text-white font-semibold py-2.5 rounded-lg mt-4">
-                Get Free Quote
-            </a>
-        </div>
-    </header>
+          <!-- WEB3FORMS NATIVE POST FORM -->
+          <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateQuoteForm(event)">
+            <input type="hidden" name="access_key" value="197459b2-5d3c-4fb0-997a-0d54102d7a5e">
+            <input type="hidden" name="subject" value="New Pulse Test & Tag Quote Request">
+            <input type="hidden" name="from_name" value="Pulse Test & Tag Perth Website">
 
-    <!-- HERO SECTION -->
-    <section class="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-20 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <div class="inline-flex items-center gap-2 bg-brand-cyan/20 border border-brand-cyan/40 text-brand-cyan px-3 py-1 rounded-full text-sm font-semibold">
-                    <i class="fa-solid fa-circle-check"></i> Certified Electrical Safety Technicians
-                </div>
-                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-                    Professional Electrical <span class="text-brand-cyan">Test & Tag Services</span>
-                </h1>
-                <p class="text-slate-300 text-lg">
-                    Ensure full workplace compliance with AS/NZS 3760:2022 standards. Fast, reliable, and non-disruptive testing for businesses, construction sites, and commercial facilities.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                    <a href="#calculator" class="bg-brand-cyan hover:bg-sky-500 text-white font-bold px-6 py-3.5 rounded-lg text-center shadow-lg transition-all">
-                        Calculate Estimated Cost
-                    </a>
-                    <a href="#contact" class="border border-slate-600 hover:border-slate-400 text-slate-200 font-semibold px-6 py-3.5 rounded-lg text-center transition-all">
-                        Book Technician
-                    </a>
-                </div>
+            <!-- CALCULATED FORM VALUES FOR EMAIL -->
+            <input type="hidden" name="Estimate_Ex_GST" id="quoteTotal" value="$0.00">
+            <input type="hidden" name="Estimate_GST" id="quoteGst" value="$0.00">
+            <input type="hidden" name="Estimate_Inc_GST" id="quoteTotalInc" value="$0.00">
+
+            <div class="quantity-list">
+              <label class="quantity-field">
+                <span class="field-title">Single Phase Test &amp; Tag</span>
+                <span class="field-help">First 10 tags $100, then $4.95 each</span>
+                <input type="number" min="0" step="1" value="0" name="Single_Phase_Qty" id="singlePhase" inputmode="numeric" />
+              </label>
+              <label class="quantity-field">
+                <span class="field-title">3 Phase Test &amp; Tag <em>($15.95 each)</em></span>
+                <input type="number" min="0" step="1" value="0" name="Three_Phase_Qty" id="threePhase" inputmode="numeric" />
+              </label>
+              <label class="quantity-field">
+                <span class="field-title">RCD Testing <em>($15.95 each)</em></span>
+                <input type="number" min="0" step="1" value="0" name="RCD_Qty" id="rcdTesting" inputmode="numeric" />
+              </label>
+              <label class="quantity-field">
+                <span class="field-title">Microwave Radiation Test <em>($18.95 each)</em></span>
+                <input type="number" min="0" step="1" value="0" name="Microwave_Qty" id="microwave" inputmode="numeric" />
+              </label>
+              <label class="quantity-field">
+                <span class="field-title">Fire Extinguisher Test <em>($18.95 each)</em></span>
+                <input type="number" min="0" step="1" value="0" name="Fire_Extinguisher_Qty" id="fire" inputmode="numeric" />
+              </label>
             </div>
 
-            <div class="bg-slate-800/80 p-8 rounded-2xl border border-slate-700/60 shadow-2xl backdrop-blur-sm">
-                <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-shield-cat text-brand-cyan"></i> Compliance Checklist
-                </h3>
-                <ul class="space-y-3.5 text-slate-300 text-sm">
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
-                        <span>Visual inspection & electrical testing for all portable appliances.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
-                        <span>Durable, color-coded compliance tagging applied on-site.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
-                        <span>Detailed digital asset register & compliance logbook provided.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
-                        <span>RCD / Safety Switch trip time testing & reporting.</span>
-                    </li>
-                </ul>
+            <div class="client-box">
+              <div class="client-heading"><span>CLIENT DETAILS</span><small>Needed to send your quote</small></div>
+              <div class="client-grid">
+                <label>Your name<input required name="Client_Name" id="clientName" placeholder="Full name" /></label>
+                <label>Email<input required type="email" name="email" id="clientEmail" placeholder="you@company.com.au" /></label>
+                <label>Phone<input name="Phone" id="clientPhone" placeholder="04xx xxx xxx" /></label>
+                <label>Company<input name="Company" id="clientCompany" placeholder="Company name" /></label>
+                <label class="full">Site address<input name="Address" id="clientAddress" placeholder="Workplace / site address" /></label>
+                <label class="full">Notes<textarea name="Notes" id="clientNotes" rows="3" placeholder="Anything Mak should know?"></textarea></label>
+              </div>
             </div>
+
+            <p id="formError" class="error-msg">Please select at least one item quantity before submitting.</p>
+            <button class="send-btn" id="sendBtn" type="submit">✉ Send my quote</button>
+            <p class="privacy-note">No payment is taken online. Prices shown are estimates and exclude GST.</p>
+          </form>
         </div>
+
+        <!-- ESTIMATE SIDEBAR CARD -->
+        <aside class="estimate-card" aria-live="polite">
+          <div class="estimate-header">
+            <div class="estimate-title"><span class="receipt-icon">▤</span><h2>Price Estimate</h2></div>
+            <span class="live-dot">LIVE</span>
+          </div>
+          <div class="estimate-rule"></div>
+
+          <!-- SIDE-BY-SIDE TOTALS -->
+          <div class="estimate-totals-grid">
+            <div class="total-col">
+              <span>Estimated Total <small>(Excl. GST)</small></span>
+              <strong id="totalExGst">$0.00</strong>
+            </div>
+            <div class="total-col highlight">
+              <span>Estimated Total <small>(Incl. GST)</small></span>
+              <strong id="totalIncGst">$0.00</strong>
+            </div>
+          </div>
+
+          <div class="estimate-items" id="estimateList">
+            <div class="empty-state"><span class="check-circle">✓</span><p>Select quantities to see your estimate.</p></div>
+          </div>
+          <div class="estimate-foot">Your request goes straight to Mak at Pulse Test and Tag. Prices subject to site verification.</div>
+        </aside>
+      </div>
     </section>
 
     <!-- SERVICES SECTION -->
-    <section id="services" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold text-slate-900">Our Comprehensive Services</h2>
-                <p class="text-slate-600 mt-2">Tailored testing and tagging solutions designed to keep your workplace compliant and safe.</p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-brand-cyan/10 text-brand-cyan rounded-lg flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-plug"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Electrical Appliance Testing</h3>
-                    <p class="text-slate-600 text-sm">Thorough testing of portable electrical equipment, power tools, extension cords, and office appliances.</p>
-                </div>
-
-                <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-brand-cyan/10 text-brand-cyan rounded-lg flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-toggle-on"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">RCD / Safety Switch Testing</h3>
-                    <p class="text-slate-600 text-sm">Push button and trip-time testing for fixed and portable Residual Current Devices (RCDs).</p>
-                </div>
-
-                <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-brand-cyan/10 text-brand-cyan rounded-lg flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-file-invoice"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Digital Compliance Reports</h3>
-                    <p class="text-slate-600 text-sm">Comprehensive digital item registry and safety certificate provided following service completion.</p>
-                </div>
-            </div>
+    <section class="service-band" id="services">
+      <div class="services-shell">
+        <div class="services-heading">
+          <span>OUR SERVICES</span>
+          <h2>Electrical safety services</h2>
+          <p>Professional, compliant and on-time service across Perth.</p>
         </div>
+        <div class="service-grid">
+          <article><div class="service-icon">🏷</div><div><h3>Test and Tag</h3><p>AS/NZS 3760:2022</p></div><b>✓</b></article>
+          <article><div class="service-icon">▣</div><div><h3>RCD Testing</h3><p>AS/NZS 3760:2022</p></div><b>✓</b></article>
+          <article><div class="service-icon">♧</div><div><h3>Fire Extinguisher</h3><p>AS 1851:2012</p></div><b>✓</b></article>
+          <article><div class="service-icon">◉</div><div><h3>Microwave Radiation</h3><p>AS/NZS 60335.2.25:2012</p></div><b>✓</b></article>
+          <article><div class="service-icon">⚒</div><div><h3>Appliance Repairs</h3><p>Safe &amp; reliable</p></div><b>✓</b></article>
+          <article><div class="service-icon">⚡</div><div><h3>3 Phase Testing</h3><p>Testing, repairs &amp; maintenance</p></div><b>✓</b></article>
+        </div>
+      </div>
     </section>
 
-    <!-- CALCULATOR SECTION -->
-    <section id="calculator" class="py-16 bg-slate-100">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                <h2 class="text-2xl font-bold text-slate-900 mb-2 text-center">Estimate Your Cost</h2>
-                <p class="text-slate-600 text-center mb-8 text-sm">Adjust the slider based on the number of electrical items at your location.</p>
-
-                <div class="space-y-6">
-                    <div>
-                        <div class="flex justify-between items-center mb-2">
-                            <label for="item-range" class="font-semibold text-slate-700">Number of Items to Test:</label>
-                            <span id="item-count" class="text-2xl font-bold text-brand-cyan">50 Items</span>
-                        </div>
-                        <input id="item-range" type="range" min="10" max="500" step="10" value="50" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-cyan">
-                    </div>
-
-                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-4">
-                        <div>
-                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Estimated Price</span>
-                            <span id="estimated-price" class="text-3xl font-extrabold text-slate-900">$180.00</span>
-                            <span class="text-xs text-slate-500 block mt-1">*Excluding GST. Final quote verified on-site.</span>
-                        </div>
-                        <a href="#contact" class="bg-brand-cyan hover:bg-sky-500 text-white font-semibold px-6 py-3 rounded-lg text-sm transition-all w-full sm:w-auto text-center">
-                            Book This Quote
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+      <div class="about-shell">
+        <div>
+          <span class="eyebrow">PULSE TEST AND TAG PERTH</span>
+          <h2>Safe. Compliant. Professional. On Time.</h2>
+          <p>Electrical Safety &amp; Appliance Services for Perth workplaces. Get an estimate online, then Mak will contact you to confirm the appointment and scope.</p>
+          <div class="trust-pills"><span>✓ AU/NZ Standards</span><span>✓ Local Perth Service</span><span>✓ Fast Response</span></div>
         </div>
+        <div class="contact-panel" id="contact">
+          <h3>Mak (Maulik) Patel</h3><span>OWNER</span>
+          <a href="tel:0448917087">0448 917 087</a>
+          <a href="mailto:mak.p@pulsetestandtag.com.au">mak.p@pulsetestandtag.com.au</a>
+          <a href="https://www.pulsetestandtag.com.au" target="_blank" rel="noopener">www.pulsetestandtag.com.au</a>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- CONTACT FORM SECTION -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-slate-900">Book Service or Request Quote</h2>
-                <p class="text-slate-600 mt-2">Fill out the form below and our team will get in touch promptly.</p>
-            </div>
+  <footer>
+    <div>© <span id="year"></span> Pulse Test and Tag Perth</div>
+    <div>Electrical Safety &amp; Appliance Services</div>
+  </footer>
 
-            <!-- Web3Forms Integration -->
-            <form id="booking-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6 bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                <!-- Direct Access Key -->
-                <input type="hidden" name="access_key" value="197459b2-5d3c-4fb0-997a-0d54102d7a5e">
-                <input type="hidden" name="subject" value="New Test & Tag Booking Request">
-                <input type="hidden" name="from_name" value="Pulse Test & Tag Website">
+  <script>
+    // Set current copyright year
+    document.getElementById('year').innerText = new Date().getFullYear();
 
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-2">Full Name *</label>
-                        <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-cyan">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-2">Email Address *</label>
-                        <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-cyan">
-                    </div>
-                </div>
+    // Perform live estimate calculation
+    function calculateEstimate() {
+      const sp = parseInt(document.getElementById('singlePhase').value, 10) || 0;
+      const tp = parseInt(document.getElementById('threePhase').value, 10) || 0;
+      const rcd = parseInt(document.getElementById('rcdTesting').value, 10) || 0;
+      const mw = parseInt(document.getElementById('microwave').value, 10) || 0;
+      const fe = parseInt(document.getElementById('fire').value, 10) || 0;
 
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-2">Phone Number *</label>
-                        <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-cyan">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-2">Estimated Item Count</label>
-                        <input type="text" name="items" id="form-items" value="50 Items" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-cyan">
-                    </div>
-                </div>
+      let subtotal = 0;
+      let listHtml = '';
 
-                <div>
-                    <label class="block text-sm font-semibold text-slate-700 mb-2">Service Location / Address</label>
-                    <input type="text" name="location" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-cyan">
-                </div>
+      if (sp > 0) {
+        const spCost = (sp <= 10) ? 100 : 100 + ((sp - 10) * 4.95);
+        subtotal += spCost;
+        listHtml += `<div class="estimate-row"><span>Single Phase (${sp})</span><strong>$${spCost.toFixed(2)}</strong></div>`;
+      }
+      if (tp > 0) {
+        const tpCost = tp * 15.95;
+        subtotal += tpCost;
+        listHtml += `<div class="estimate-row"><span>3 Phase (${tp})</span><strong>$${tpCost.toFixed(2)}</strong></div>`;
+      }
+      if (rcd > 0) {
+        const rcdCost = rcd * 15.95;
+        subtotal += rcdCost;
+        listHtml += `<div class="estimate-row"><span>RCD Testing (${rcd})</span><strong>$${rcdCost.toFixed(2)}</strong></div>`;
+      }
+      if (mw > 0) {
+        const mwCost = mw * 18.95;
+        subtotal += mwCost;
+        listHtml += `<div class="estimate-row"><span>Microwave (${mw})</span><strong>$${mwCost.toFixed(2)}</strong></div>`;
+      }
+      if (fe > 0) {
+        const feCost = fe * 18.95;
+        subtotal += feCost;
+        listHtml += `<div class="estimate-row"><span>Fire Extinguisher (${fe})</span><strong>$${feCost.toFixed(2)}</strong></div>`;
+      }
 
-                <div>
-                    <label class="block text-sm font-semibold text-slate-700 mb-2">Additional Notes or Preferred Date</label>
-                    <textarea name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-cyan"></textarea>
-                </div>
+      const estimateList = document.getElementById('estimateList');
+      if (subtotal === 0) {
+        estimateList.innerHTML = '<div class="empty-state"><span class="check-circle">✓</span><p>Select quantities to see your estimate.</p></div>';
+      } else {
+        estimateList.innerHTML = listHtml;
+      }
 
-                <button type="submit" class="w-full bg-brand-cyan hover:bg-sky-500 text-white font-bold py-4 rounded-lg shadow-md transition-all text-base">
-                    Send Request
-                </button>
-            </form>
-        </div>
-    </section>
+      const gst = subtotal * 0.10;
+      const totalInc = subtotal + gst;
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 text-center text-sm space-y-2">
-            <p>&copy; 2026 Pulse Test and Tag. All rights reserved.</p>
-            <p class="text-xs text-slate-500">Complying with AS/NZS 3760:2022 Electrical Safety Standards.</p>
-        </div>
-    </footer>
+      // Update visible totals
+      document.getElementById('totalExGst').innerText = '$' + subtotal.toFixed(2);
+      document.getElementById('totalIncGst').innerText = '$' + totalInc.toFixed(2);
 
-    <!-- INTERACTIVE SCRIPTS -->
-    <script>
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+      // Update hidden form fields for Web3Forms email
+      document.getElementById('quoteTotal').value = '$' + subtotal.toFixed(2);
+      document.getElementById('quoteGst').value = '$' + gst.toFixed(2);
+      document.getElementById('quoteTotalInc').value = '$' + totalInc.toFixed(2);
+    }
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+    // Form submission validation
+    function validateQuoteForm(event) {
+      const sp = parseInt(document.getElementById('singlePhase').value, 10) || 0;
+      const tp = parseInt(document.getElementById('threePhase').value, 10) || 0;
+      const rcd = parseInt(document.getElementById('rcdTesting').value, 10) || 0;
+      const mw = parseInt(document.getElementById('microwave').value, 10) || 0;
+      const fe = parseInt(document.getElementById('fire').value, 10) || 0;
+
+      const totalItems = sp + tp + rcd + mw + fe;
+      const errorElem = document.getElementById('formError');
+
+      if (totalItems === 0) {
+        errorElem.style.display = 'block';
+        return false;
+      }
+      errorElem.style.display = 'none';
+      return true;
+    }
+
+    // Initialize event listeners after DOM renders
+    document.addEventListener('DOMContentLoaded', () => {
+      const inputs = document.querySelectorAll('.quantity-list input[type="number"]');
+      inputs.forEach(input => {
+        // Clear default '0' on focus to prevent '010' / '025' leading zero glitch
+        input.addEventListener('focus', function() {
+          if (this.value === '0') this.value = '';
         });
-
-        // Price calculator logic
-        const itemRange = document.getElementById('item-range');
-        const itemCount = document.getElementById('item-count');
-        const estimatedPrice = document.getElementById('estimated-price');
-        const formItems = document.getElementById('form-items');
-
-        itemRange.addEventListener('input', (e) => {
-            const count = parseInt(e.target.value);
-            itemCount.textContent = `${count} Items`;
-            formItems.value = `${count} Items`;
-
-            let baseRate = 3.50;
-            if (count > 100) baseRate = 3.00;
-            if (count > 250) baseRate = 2.50;
-
-            const total = Math.max(120, count * baseRate);
-            estimatedPrice.textContent = `$${total.toFixed(2)}`;
+        // Restore '0' on blur if user leaves input blank
+        input.addEventListener('blur', function() {
+          if (this.value.trim() === '') this.value = '0';
         });
-    </script>
+        // Trigger estimate update immediately on user keypress/input
+        input.addEventListener('input', calculateEstimate);
+      });
+
+      // Run calculation on load in case browser restored previous inputs
+      calculateEstimate();
+    });
+  </script>
 </body>
 </html>
